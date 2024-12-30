@@ -1,8 +1,9 @@
 .header {
-  background-color: #fff;
-  padding: 10px 0;
+  background-color:#fff;
   display: flex;
   justify-content: center;
+  padding: 10px 0;
+
   
 }
 
@@ -11,5 +12,4 @@
   height: 26px;
   gap: 0px;
   opacity: 0px;
-  
 }

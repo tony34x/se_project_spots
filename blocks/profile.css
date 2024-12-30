@@ -1,3 +1,36 @@
 .profile {
-
+display: flex;
+max-width: 1280px;
+margin: 0 auto;
 }
+
+
+.profile__avatar {
+    margin-right: 20px;
+}
+
+.profile__column {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile__title {
+ margin:0;
+}
+
+.profile__description {
+margin: 0;
+}
+
+.profile__edit-bin {
+  margin-top:auto;  
+}
+
+.profile__add-bin {
+    margin-left:auto;  
+}
+
+.profile page__section{
+    max-width: 1280px;
+    margin: 0 auto;
+}  

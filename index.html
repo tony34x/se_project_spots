@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="???" />
-    <meta name="author" content="???" />
-    <meta name="keywords" content="html, css ???" />
-    <link rel="stylesheet" href="page/index.css" />
+    <meta name="description" content="A website showcasing profiles" />
+    <meta name="author" content="Your Name" />
+    <meta name="keywords" content="html, css, profiles" />
+    <link rel="stylesheet" href="./pages/index.css" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <title>spot</title>
   </head>
   <body>
     <div class="page">
-      <header class="header">
+      <header class="header" role="banner">
         <img src="./images/Logo.svg" alt="spot logo" class="header__logo" />
       </header>
       <main class="content">
@@ -23,15 +23,87 @@
             class="profile__avatar"
           />
           <div class="profile__column">
-            <h1 class="profile__name">bessie coleman</h1>
+            <h1 class="profile__name">Aliaune Damala Bouga Time Bongo Puru Nacka Lu Lu Lu Badara Akon...</h1>
             <p class="profile__description">civil aviator</p>
             <button class="profile__edit-bin">
               <img src="./images/pencil.svg" alt="pencil icon" />edit profile
             </button>
           </div>
-          <button class="profile__add-bin">
+          <button type="button" class="profile__add-bin">
             <img src="./images/plus.svg" alt="plus icon" />new post
           </button>
+        </section>
+        <section class="cards page__section">
+          <ul class="cards__list">
+            <li class="cards">
+            <img
+              src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
+              alt="Val Thorens"
+              class="card__image"
+            />
+            <div class="card__content">
+             <h2 class="card__title">val thorens</h2>
+             <button type="button" class="card__like-button"></button>
+          </div>
+         </li> 
+         <li class="cards">
+            <img
+              src="./images/2-photo-by-ceiline-from-pexels.jpg"
+              alt="Restaurant terrace"
+              class="card__image"
+            />
+            <div class="card__content">
+             <h2 class="card__title">Restaurant terrace</h2>
+             <button type="button" class="card__like-button"></button>
+          </div>
+         </li> 
+         <li class="cards">
+            <img
+              src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
+              alt="An outdoor cafe"
+              class="card__image"
+            />
+            <div class="card__content">
+             <h2 class="card__title">An outdoor cafe</h2>
+             <button type="button" class="card__like-button"></button>
+          </div>
+         </li> 
+         <li class="cards">
+            <img
+              src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
+              alt="A very long bridge, over the forest..."
+              class="card__image"
+            />
+            <div class="card__content">
+             <h2 class="card__title">A very long bridge, over the forest...</h2>
+             <button type="button" class="card__like-button"></button>
+          </div>
+         </li>
+        </li> 
+        <li class="cards">
+           <img
+             src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
+             alt="Tunnel with morning light"
+             class="card__image"
+           />
+           <div class="card__content">
+            <h2 class="card__title">Tunnel with morning light</h2>
+            <button type="button" class="card__like-button"></button>
+         </div>
+        </li>
+    </li> 
+    <li class="cards">
+       <img
+         src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
+         alt="Mountain house"
+         class="card__image"
+       />
+       <div class="card__content">
+        <h2 class="card__title">Mountain house</h2>
+        <button type="button" class="card__like-button"></button>
+     </div>
+       </li>  
+          </ul>
         </section>
       </main>
       <footer class="footer"></footer>

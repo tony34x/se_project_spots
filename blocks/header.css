@@ -1,10 +1,9 @@
 .header {
-  background-color:#fff;
+  background-color: #ffffff !important;
   display: flex;
   justify-content: center;
   padding: 10px 0;
-
-  
+  height: 60px;
 }
 
 .header__logo {

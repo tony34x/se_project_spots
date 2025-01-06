@@ -3,12 +3,10 @@
   display: flex;
   justify-content: center;
   padding: 10px 0;
-  height: 60px;
 }
 
 .header__logo {
   width: 94px;
   height: 26px;
-  gap: 0px;
-  opacity: 0px;
+ 
 }

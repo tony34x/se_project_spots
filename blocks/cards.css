@@ -51,6 +51,10 @@
   opacity: 40%;
 }
 
+.card__like-button:hover {
+  background-color: #212121;
+}
+
 .cards {
   padding-top: 20px;
 }
@@ -64,4 +68,3 @@
     height: 288px;
   }
 }
-

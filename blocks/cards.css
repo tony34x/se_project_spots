@@ -1,11 +1,5 @@
-.card__like-button {
-}
 
-.card {
-  
-  max-width: 413px;
 
-}
 
 .card__image {
   width: 413px;
@@ -61,11 +55,13 @@
 .cards {
   padding-top: 20px;
   margin: 20px;
+
 }
 
 @media screen and (max-width: 627px) {
-  .card {
+  .cards {
     grid-template-columns: repeat(auto-fit, 288px);
+    max-width: 413px;
   }
 
   .card__image {

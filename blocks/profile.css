@@ -58,19 +58,17 @@
   border: none;
   width: 107px;
   background-color: transparent;
-
+ 
 }
 
 .profile__edit-button:hover {
   background-color: #212121;
-
 }
 
 .profile__add-button {
   margin-left: auto;
   width: 157px;
   height: 52px;
-  
   gap: 8px;
   border-radius: 8px;
   opacity: 1;
@@ -87,7 +85,7 @@
   line-height: 1px;
   border: none;
   cursor: pointer;
-  
+  font-family: Poppins;
 }
 
 .profile__add-button:hover {
@@ -106,7 +104,6 @@
     align-items: center;
     text-align: center;
     padding-top: 20px;
-    
   }
 
   .profile__avatar {
@@ -129,15 +126,21 @@
   }
 
   .profile__column {
-
   }
 
   .profile__add-button {
     margin: 0;
     width: 100%;
     margin-top: 10px;
-    
-    
-    
+  }
+
+
+
+  .profile__edit-button {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    display: flex;
   }
 }
+

@@ -46,7 +46,7 @@
 }
 
 .card__like-button:hover {
-  background-color: #212121;
+ opacity: 100%;
 }
 
 .cards {

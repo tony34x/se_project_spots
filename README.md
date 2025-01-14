@@ -22,5 +22,5 @@ Card Design: show the images of pictures.
 ![ screenshots spot ](images/127.0.0.1_5501_index.html.png)
 ![ screenshots spot 2](images/Screenshot_8-1-2025_19147_127.0.0.1.jpeg)
 
- deployed project:
-https://github.com/tony34x/se_project_spots
+ [deployed project:]
+https://tony34x.github.io/se_project_spots/

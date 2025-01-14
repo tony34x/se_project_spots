@@ -58,11 +58,12 @@
   border: none;
   width: 107px;
   background-color: transparent;
+  opacity: 70%;
  
 }
 
 .profile__edit-button:hover {
-  background-color: #212121;
+  opacity: 100%;
 }
 
 .profile__add-button {
@@ -89,7 +90,7 @@
 }
 
 .profile__add-button:hover {
-  color: #ffffff;
+  opacity: 80%;
 }
 
 .profile page__section {
@@ -125,9 +126,6 @@
     max-width: 288px;
   }
 
-  .profile__column {
-    
-  }
 
   .profile__add-button {
     margin: 0;

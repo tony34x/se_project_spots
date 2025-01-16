@@ -19,7 +19,7 @@
 }
 
 .card__title {
-  width: 119px;
+  max-width: 119px;
   height: 24px;
   font-family: Poppins;
   font-size: 20px;

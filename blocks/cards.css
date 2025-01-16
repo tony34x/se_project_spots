@@ -1,9 +1,21 @@
+
+.cards {
+  padding: 20px 0 40px;
+  margin: 0;
+  border-bottom: 1px #212121 solid;
+
+}
+.card {
+display: flex;
+flex-direction: column;
+}
 .card__image {
   width: 413px;
   height: 413px;
   object-fit: cover;
   border-radius: 1%;
   display: block;
+
 }
 
 .cards__list {
@@ -14,14 +26,15 @@
   grid-template-columns: repeat(auto-fit, 413px);
   gap: 40px 20px;
   justify-content: center;
-  border-bottom: 1px #212121 solid;
+ 
+
  
 }
 
 .card__title {
-  max-width: 119px;
+  max-width: 350px;
   height: 24px;
-  font-family: Poppins;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 24px;
@@ -51,11 +64,8 @@
  cursor: pointer;
 }
 
-.cards {
-  padding-top: 20px;
-  margin: 20px;
 
-}
+
 
 @media screen and (max-width: 627px) {
   .cards {

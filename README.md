@@ -1,4 +1,4 @@
-##Project Name: Project Spot##
+## Project Name: Project Spot ##
 
 Description:
 Project Spot is a web-site designed to provide a clean and user-friendly interface for users to manage and update their profiles. The project includes essential features like an editable profile section, options to add new posts, and a well-structured layout for displaying content effectively.

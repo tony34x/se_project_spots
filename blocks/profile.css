@@ -31,8 +31,6 @@
   color: rgba(33, 33, 33, 1);
 }
 
-
-
 .profile__description {
   margin: 0;
   font-family: Poppins, Arial, Helvetica, sans-serif;
@@ -62,7 +60,6 @@
   padding: 0;
   gap: 8px;
   display: flex;
- 
 }
 
 .profile__edit-button::before {
@@ -99,7 +96,6 @@
   font-family: Poppins, Arial, Helvetica, sans-serif;
 }
 
-
 .profile__add-button::before {
   width: 12px;
   height: 12px;
@@ -110,7 +106,6 @@
 .profile__add-button:hover {
   opacity: 80%;
 }
-
 
 @media screen and (max-width: 680px) {
   .profile {
@@ -148,6 +143,5 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-  
   }
 }

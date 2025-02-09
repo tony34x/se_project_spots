@@ -7,7 +7,6 @@
   src: url("./Poppins-Regular.ttf") format("truetype");
 }
 
-
 @font-face {
   font-family: "Poppins";
   font-style: normal;
@@ -16,9 +15,3 @@
   /* Replace with the correct file path */
   src: url("./Poppins-Medium.ttf") format("truetype");
 }
-
-
-
-
-
-

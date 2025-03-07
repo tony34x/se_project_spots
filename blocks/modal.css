@@ -32,9 +32,14 @@
   position: absolute;
   top: 32px;
   right: 50px;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   background-image: url(../images/X\ out\ icon.svg);
+}
+
+.Modal__close-btn:hover {
+  opacity: 40%;
+  cursor: pointer;
 }
 
 .modal__title {

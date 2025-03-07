@@ -61,8 +61,14 @@
   line-height: 110.00000000000001%;
 }
 
-modal__input {
+.modal__input {
   padding: 16px 12px;
+  color: rgba(33, 33, 33, 0.4);
+}
+
+.modal__input:hover {
+  color: rgba(33, 33, 33, 1);
+  cursor: pointer;
 }
 
 .Modal__submit-btn {

@@ -26,6 +26,7 @@ const initialcards = [
 ];
 
 
+
 const profileEditButton = document.querySelector(".profile__edit-button");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
@@ -35,6 +36,22 @@ const editFormElement = editProfileModal.querySelector(".modal__form");
 const editModalClosebtn = document.querySelector(".modal__close-btn");
 const editModalNameInput = document.querySelector("#profile-name-input");
 const editModalDescriptionInput = document.querySelector("#profile-description-input");
+
+
+const cardTemplate = document.querySelector("#card-template");
+
+const cardslist = document.querySelector(".cards__list")
+console.log(cardTemplate);
+
+function getCardElement(date) { 
+  const cardElement = cardTemplate.content.querySelector(".card").cloneNode(true);
+  const cardImage = cardElement.querySelector(".card__title");
+  const cardImage = cardElement.querySelector(".cardimage");
+  cardName.textContent = date.name;
+
+  return cardElement;
+}
+
 
 
 function openModal() {
@@ -63,3 +80,8 @@ profileEditButton.addEventListener("click", () => {
   editFormElement.addEventListener("submit", handleProfileFormSubmit);
 
 });
+
+for (let  i = 0; i < initialcards.length; i++) {
+  const CardElement = getCardElement(initialcards[i]);
+ cardslist.prepend(CardElement);
+}

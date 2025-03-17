@@ -41,17 +41,17 @@
           <ul class="cards__list">
             <template id="card-template">
               <li class="card">
-                <img class="card__image"
-                src=""
-                alt=""
-                class="card__image"
-              />
-              <div class="card__footer">
-                <h2 class="card__title"></h2>
-                <button aria-lable="like card" class="card__like-button" type="button"></button>
-              </div>
-            </li>
-          </template> 
+                <img class="card__image" src="" alt="" class="card__image" />
+                <div class="card__footer">
+                  <h2 class="card__title"></h2>
+                  <button
+                    aria-lable="like card"
+                    class="card__like-button"
+                    type="button"
+                  ></button>
+                </div>
+              </li>
+            </template>
           </ul>
         </section>
       </main>
@@ -64,13 +64,18 @@
           <h2 class="modal__title">Edit Profile</h2>
           <form name="edit-profile" class="modal__form">
             <label for="profile-name-input" class="modal__label">
-              name <input id="profile-name-input" type="text" class="modal__input"
-              placeholder="Name">
+              name
+              <input
+                id="profile-name-input"
+                type="text"
+                class="modal__input"
+                placeholder="Name"
+              />
             </label>
             <label for="profile-description-input" class="modal__label">
               description
               <input
-               id="profile-description-input"
+                id="profile-description-input"
                 placeholder="descript yourself "
               />
             </label>

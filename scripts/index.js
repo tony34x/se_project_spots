@@ -45,7 +45,7 @@ console.log(cardTemplate);
 
 function getCardElement(date) { 
   const cardElement = cardTemplate.content.querySelector(".card").cloneNode(true);
-  const cardImage = cardElement.querySelector(".card__title");
+  const cardTitle = cardElement.querySelector(".card__title");
   const cardImage = cardElement.querySelector(".cardimage");
   cardName.textContent = date.name;
 

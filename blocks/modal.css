@@ -35,11 +35,12 @@
   width: 44px;
   height: 44px;
   background-image: url(../images/X\ out\ icon.svg);
+  cursor: pointer;
 }
 
 .modal__close-btn:hover {
   opacity: 40%;
-  cursor: pointer;
+  
 }
 
 .modal__title {
@@ -64,6 +65,8 @@
 .modal__input {
   padding: 16px 12px;
   color: rgba(33, 33, 33, 0.4);
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .modal__input:hover {
@@ -80,6 +83,8 @@
   font-size: 16px;
   line-height: 100%;
   color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 680px) {

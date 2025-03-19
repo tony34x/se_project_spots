@@ -37,12 +37,20 @@
   height: 20px;
   border: none;
   background-color: transparent;
-  opacity: 1;
+  opacity: 40%;
 }
 
 .card__like-button:hover {
   opacity: 100%;
   cursor: pointer;
+}
+
+.card__footer {
+ display: flex;
+ justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+
 }
 
 @media screen and (max-width: 680px) {

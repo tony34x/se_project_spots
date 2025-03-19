@@ -30,7 +30,7 @@ const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 
 const editProfileModal = document.querySelector("#edit-profile-modal");
-const editFormElement = editProfileModal.querySelector(".modal__form");
+const editFormElement = document.querySelector("#edit-profile-form");
 const editModalClosebtn = document.querySelector(".modal__close-btn");
 const editModalNameInput = document.querySelector("#profile-name-input");
 const editModalDescriptionInput = document.querySelector(
@@ -73,13 +73,13 @@ function handleProfileFormSubmit(evt) {
   // TODO - same thing for description element
 }
 
-profileEditButton.addEventListener("click", () => {
-  openModal();
-  editModalClosebtn.addEventListener("click", closeModal);
-  editFormElement.addEventListener("submit", handleProfileFormSubmit);
-});
+profileEditButton.addEventListener("click", openModal);  
+
+editModalClosebtn.addEventListener("click", closeModal); 
+
+editFormElement.addEventListener("submit", handleProfileFormSubmit);
 
 for (let i = 0; i < initialcards.length; i++) {
-  const CardElement = getCardElement(initialcards[i]);
-  cardsList.prepend(CardElement);
+ const cardElement = getCardElement(initialcards[i]);
+  cardsList.prepend(cardElement);
 }

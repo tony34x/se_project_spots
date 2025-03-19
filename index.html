@@ -41,7 +41,7 @@
           <ul class="cards__list">
             <template id="card-template">
               <li class="card">
-                <img class="card__image" src="" alt="" class="card__image" />
+                <img class="card__image" src="" alt=""/>
                 <div class="card__footer">
                   <h2 class="card__title"></h2>
                   <button
@@ -60,9 +60,9 @@
       </footer>
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
-          <button type="submit" class="modal__close-btn"></button>
+          <button type="button" class="modal__close-btn"></button>
           <h2 class="modal__title">Edit Profile</h2>
-          <form name="edit-profile" class="modal__form">
+          <form name="edit-profile" id="edit-profile-form" class="modal__form">
             <label for="profile-name-input" class="modal__label">
               name
               <input
@@ -76,7 +76,9 @@
               description
               <input
                 id="profile-description-input"
-                placeholder="descript yourself "
+                type="text"
+                class="modal__input"
+                placeholder="describe yourself " 
               />
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>

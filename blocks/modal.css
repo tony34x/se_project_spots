@@ -34,7 +34,7 @@
   right: 50px;
   width: 44px;
   height: 44px;
-  background-image: url(../images/X\ out\ icon.svg);
+  background-image: url(../images/X_out_icon.svg);
   cursor: pointer;
   opacity: 40%;
   border: transparent;
@@ -47,7 +47,7 @@
 
 .modal__title {
   margin: 0 0 32px;
-  font-family: Poppins;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 32px;
   line-height: 1;
@@ -58,10 +58,11 @@
   flex-direction: column;
   gap: 8px;
   margin-bottom: 32px;
-  font-family: Poppins;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 110.00000000000001%;
+  color: rgba(33, 33, 33, 0.7);
 }
 
 .modal__input {
@@ -81,7 +82,7 @@
   width: 156px;
   padding: 18px 0;
   background-color: rgba(33, 33, 33, 1);
-  font-family: Poppins;
+  font-family: Poppins,Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 100%;

@@ -1,4 +1,9 @@
-const initialcards = [
+
+const initialCards = [
+  {
+    name: "Val Thorens",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
+  },
   {
     name: "Mountain house",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
@@ -12,57 +17,56 @@ const initialcards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
   },
   {
- 
     name: "An outdoor cafe",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
   },
-  
   {
-
     name: "Restaurant terrace",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
-  },
-  
-  {
-    name: "Val Thorens",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
-  },
-];
+  }]
 
-const profileEditButton = document.querySelector(".profile__edit-button");
-const profileName = document.querySelector(".profile__name");
-const profileDescription = document.querySelector(".profile__description");
+const editprofileBtn = document.querySelector(".profile__edit-button");
+const  addCardbtn = document.querySelector(".profile__edit-button");
+const profileNameEl = document.querySelector(".profile__name");
+const profileDescriptionEl = document.querySelector(".profile__description");
 
 const editProfileModal = document.querySelector("#edit-profile-modal");
-const editFormElement = document.querySelector("#edit-profile-form");
-const editModalClosebtn = document.querySelector(".modal__close-btn");
-const editModalNameInput = document.querySelector("#profile-name-input");
-const editModalDescriptionInput = document.querySelector(
+const editProfileClosebtn = editProfileModal.querySelector(".modal__close");
+const editFormEl = editProfileModal.querySelector(".modal__form");
+const nameInputEl = document.querySelector("#profile-name-input");
+const DescriptionInputEl = editFormEl.querySelector(
   "#profile-description-input"
 );
 
-const cardTemplate = document.querySelector("#card-template");
+const addcardModal = document.querySelector("#edit-profile-modal");
+const addcardclosebtn = addCardModal.querySelector(".modal__close");
+const addCardFormEL = addCardModal.querySelector(".modal__form");
+const captionInputEl = addCardFormEL.querySelector("#profile-name-input");
+const linkInputEl = addCardFormEL.querySelector("#card-link-input");
 
-const cardsList = document.querySelector(".cards__list");
-console.log(cardTemplate);
 
-function getCardElement(date) {
-  const cardElement = cardTemplate.content
-    .querySelector(".card")
-    .cloneNode(true);
-  const cardTitle = cardElement.querySelector(".card__title");
-  const cardImage = cardElement.querySelector(".card__image");
-  cardTitle.textContent = date.name;
-  cardImage.src = date.link;
-  cardImage.alt = date.name;
 
-  return cardElement;
-}
+editprofileBtn.addEventListener("click", function () {
+  nameinputEl.value = profileNameEl.textContent;
+  descriptionInputEl.value = profileDescriptionEl.textContent;
+  editProfileModal.classList.add("modal_opened");
+});
+
+addCardBt.addEventListener("click", function () {
+  addCardModal.classList.add("modal_opened");
+} 
+
+);
+
+initialCards.forEach(function (item) {
+ console.log(item.name);
+  console.log(item.link);
+});
 
 function openModal() {
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
-  editProfileModal.classList.add("modal_opened");
+  editProfileModal.classList.remove("modal_opened");
   // TODO - same thing for description element
 }
 
@@ -87,3 +91,7 @@ for (let i = 0; i < initialcards.length; i++) {
  const cardElement = getCardElement(initialcards[i]);
   cardsList.prepend(cardElement);
 }
+
+
+
+

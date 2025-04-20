@@ -91,7 +91,3 @@ for (let i = 0; i < initialcards.length; i++) {
  const cardElement = getCardElement(initialcards[i]);
   cardsList.prepend(cardElement);
 }
-
-
-
-

@@ -56,6 +56,12 @@ function handleProfileFormSubmit() {
   openModal(profileEditModal);
 }
 
+function handleProfileEditButtonClick() {
+  nameInput.value = profileName.textContent;
+  descriptionInput.value = profileDescription.textContent;
+  openModal(profileEditModal);
+}
+
 
 
 function getCardElement(data) {

@@ -43,11 +43,11 @@ const nameInput = document.querySelector("#profile-name-input");
 const descriptionInput = document.querySelector("#profile-description-input");
 
 function openModal() {
-modal.classList.add("modal_opened");
+Modal.classList.add("modal_opened");
 }
 
 function closeModal() {
- modal.classlist.remove("modal_opened")
+ Modal.classList.remove("modal_opened")
 }
 
 function handleProfileFormSubmit() {

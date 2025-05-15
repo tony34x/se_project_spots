@@ -40,7 +40,7 @@
   opacity: 40%;
 }
 
-.card__like-button :active  {
+.card__like-button_active  {
   background-image: url(../images/State=Liked.svg);
   
 

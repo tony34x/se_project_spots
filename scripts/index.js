@@ -1,4 +1,3 @@
-
 const initialCards = [
   {
     name: "Val Thorens",
@@ -23,7 +22,8 @@ const initialCards = [
   {
     name: "Restaurant terrace",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
-  }]
+  },
+];
 
 // Button and modal variables
 const profileEditButton = document.querySelector(".profile__edit-button"); // Add this line
@@ -42,13 +42,10 @@ const profileEditForm = profileEditModal.querySelector(".modal__form");
 const nameInput = document.querySelector("#profile-name-input");
 const descriptionInput = document.querySelector("#profile-description-input");
 
-
-
-
 function openModal(modal) {
   modal.classList.add("modal_opened");
 }
-1.
+1;
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
 }
@@ -66,29 +63,31 @@ function handleProfileEditButtonClick() {
   openModal(profileEditModal);
 }
 
-
-
 function getCardElement(data) {
   const cardTemplate = document.querySelector("#card-template").content;
   const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
   const cardImage = cardElement.querySelector(".card__image");
   const cardTitle = cardElement.querySelector(".card__title");
- 
+
   console.log(data);
 
   cardImage.src = data.link;
   cardImage.alt = data.name;
   cardTitle.textContent = data.name;
 
-   const cardlikebutton = cardElement.querySelector(".card__like-button");
-   cardlikebutton.addEventListener("click",() => {
+  const cardlikebutton = cardElement.querySelector(".card__like-button");
+  cardlikebutton.addEventListener("click", () => {
     cardlikebutton.classList.toggle("card__like-button_active");
-   });
+  });
+
+  const cardDeleteButton = cardElement.querySelector(".card__delete-button");
+  cardDeleteButton.addEventListener("click" ,()=>{
+    cardDeleteButton.closest(".card").remove();
+    car
+  } );
 
   return cardElement;
 }
-
-
 
 // Event Listeners
 profileEditButton.addEventListener("click", handleProfileEditButtonClick);

@@ -53,6 +53,32 @@
       <footer class="footer">
         <p class="footer__text">&copy;Spots</p>
       </footer>
+      <div class="modal" id="preview-modal">
+        <div class="modal__container">
+          <button type="button" class="modal__close-btn"></button>
+          <h2 class="modal__title">New Post</h2>
+          <form name="add-card" id="add-card-form" class="modal__form">
+            <label for="card-title-input" class="modal__label">
+              title
+              <input
+                id="card-title-input"
+                type="text"
+                class="modal__input"
+                placeholder="Title"
+              />
+            </label>
+            <label for="card-image-input" class="modal__label">
+              image link
+              <input
+                id="card-image-input"
+                type="url"
+                class="modal__input"
+                placeholder="Image URL"
+              />
+            </label>
+            <button type="submit" class="modal__submit-btn">Create</button>
+          </form>
+        </div>
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
           <button type="button" class="modal__close-btn"></button>

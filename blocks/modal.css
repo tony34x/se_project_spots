@@ -32,17 +32,33 @@
   position: absolute;
   top: 32px;
   right: 50px;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   background-image: url(../images/X_out_icon.svg);
   cursor: pointer;
-  opacity: 40%;
+  opacity: 0.4;
   border: transparent;
   background-color: transparent;
+  background-size: 35px 35px;
+  border: none;
+  transition: 0.3s;
+  padding: 0;
+  margin: 0;
+}
+.modal__close_type_prewiew {
+  top: 0;
+  right: -52.5px;
+
 }
 
 .modal__close-btn:hover {
   opacity: 100%;
+}
+
+
+.modal__caption {
+color: white;
+
 }
 
 .modal__title {
@@ -93,6 +109,20 @@
 
 .modal__submit-btn:hover {
   opacity: 30%;
+}
+
+
+.modal__container {
+ position: relative; 
+}
+
+.modal__image {
+max-width: 80vw;
+  max-height: 80vh;
+  width: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
 }
 
 @media screen and (max-width: 680px) {

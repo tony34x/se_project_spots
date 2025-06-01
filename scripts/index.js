@@ -32,7 +32,7 @@ const initialCards = [
 // Button and modal variables
 const profileEditButton = document.querySelector(".profile__edit-button"); // Add this line
 const profileEditModal = document.querySelector("#edit-profile-modal");
-const modalCloseButton = document.querySelector(".modal__close-btn");
+const profileEditModalCloseButton = profileEditModal.querySelector(".modal__close-btn");
 const cardsList = document.querySelector(".cards__list"); // Move this up here
 
 // Profile info variables
@@ -72,6 +72,7 @@ function getCardElement(data) {
   const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
   const cardImage = cardElement.querySelector(".card__image");
   const cardTitle = cardElement.querySelector(".card__title");
+  
 
   console.log(data);
 
@@ -87,15 +88,21 @@ function getCardElement(data) {
   const cardDeleteButton = cardElement.querySelector(".card__delete-button");
   cardDeleteButton.addEventListener("click" ,()=>{
     cardDeleteButton.closest(".card").remove();
-    car
+    // car
   } );
+  cardImage.addEventListener("click" ,() => {
+    cardImage.classList.add(cardImage) 
+
+
+  });
+
 
   return cardElement;
 }
 
 // Event Listeners
 profileEditButton.addEventListener("click", handleProfileEditButtonClick);
-modalCloseButton.addEventListener("click", () => closeModal(profileEditModal));
+profileEditModalCloseButton.addEventListener("click", () => closeModal(profileEditModal));
 profileEditForm.addEventListener("submit", handleProfileFormSubmit);
 
 // Keep your card rendering code

@@ -53,33 +53,13 @@
       <footer class="footer">
         <p class="footer__text">&copy;Spots</p>
       </footer>
-      <div class="modal" id="preview- modal">
-        <div class="modal__container">
+      <div class="modal modal_opened" id="preview-modal">
+        <div class="modal__image-container">
           <button type="button" 
           class="modal__close-btn">
         </button>
-          <h3 class="modal__title">New Post</h3>
-          <form name="add-card" id="add-card-form" class="modal__form">
-            <label for="card-title-input" class="modal__label">
-              title
-              <input
-                id="card-title-input"
-                type="text"
-                class="modal__input"
-                placeholder="Title"
-              />
-            </label>
-            <label for="card-image-input" class="modal__label">
-              image link
-              <input
-                id="card-image-input"
-                type="url"
-                class="modal__input"
-                placeholder="Image URL"
-              />
-            </label>
-            <button type="submit" class="modal__submit-btn">Create</button>
-          </form>
+        <img src="https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg" alt="" class="modal__image">
+          <p class="modal__caption">Golden Gate bridge</p>
         </div>
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">

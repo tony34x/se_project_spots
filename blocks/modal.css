@@ -56,11 +56,6 @@
 }
 
 
-.modal__caption {
-color: white;
-
-}
-
 .modal__title {
   margin: 0 0 32px;
   font-family: Poppins, Arial, Helvetica, sans-serif;
@@ -112,7 +107,7 @@ color: white;
 }
 
 
-.modal__container {
+.modal__image-container {
  position: relative; 
 }
 
@@ -124,6 +119,12 @@ max-width: 80vw;
   display: block;
   border-radius: 8px;
 }
+
+.modal__caption {
+color: white;
+
+}
+
 
 @media screen and (max-width: 680px) {
   .modal {

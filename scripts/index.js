@@ -1,5 +1,5 @@
 const initialCards = [
-   {
+  {
     name: "golden gate bridge",
     link: " https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
   },
@@ -32,7 +32,8 @@ const initialCards = [
 // Button and modal variables
 const profileEditButton = document.querySelector(".profile__edit-button"); // Add this line
 const profileEditModal = document.querySelector("#edit-profile-modal");
-const profileEditModalCloseButton = profileEditModal.querySelector(".modal__close-btn");
+const profileEditModalCloseButton =
+  profileEditModal.querySelector(".modal__close-btn");
 const cardsList = document.querySelector(".cards__list"); // Move this up here
 
 // Profile info variables
@@ -46,10 +47,16 @@ const profileEditForm = profileEditModal.querySelector(".modal__form");
 const nameInput = document.querySelector("#profile-name-input");
 const descriptionInput = document.querySelector("#profile-description-input");
 
+const previewModal = document.querySelector("#preview-modal");
+const previewModalCloseBth = previewModal.querySelector(".modal__close-btn");
+const previewImageEl = previewModal.querySelector(".modal__image");
+const previewcaption = previewModal.querySelector("modal__caption");
+
+//to do
 function openModal(modal) {
   modal.classList.add("modal_opened");
 }
-1;
+// to do
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
 }
@@ -72,7 +79,12 @@ function getCardElement(data) {
   const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
   const cardImage = cardElement.querySelector(".card__image");
   const cardTitle = cardElement.querySelector(".card__title");
-  
+
+  cardImage.addEventListener("click", () => {
+    previewImageEl.src = data.link;
+    previewImageEl.alt = data.link;
+    openModal(previewModal);
+  });
 
   console.log(data);
 
@@ -86,23 +98,28 @@ function getCardElement(data) {
   });
 
   const cardDeleteButton = cardElement.querySelector(".card__delete-button");
-  cardDeleteButton.addEventListener("click" ,()=>{
+  cardDeleteButton.addEventListener("click", () => {
     cardDeleteButton.closest(".card").remove();
     // car
-  } );
-  cardImage.addEventListener("click" ,() => {
-    cardImage.classList.add(cardImage) 
-
-
   });
+  cardImage.addEventListener("click", () => {
+    cardImage.classList.add(cardImage);
 
+    previewModal.addEventListener("click", () => {
+      previewModal.classList.add(previewModal);
+    });
+  });
 
   return cardElement;
 }
 
 // Event Listeners
 profileEditButton.addEventListener("click", handleProfileEditButtonClick);
-profileEditModalCloseButton.addEventListener("click", () => closeModal(profileEditModal));
+
+profileEditModalCloseButton.addEventListener("click", () => {
+  closeModal(profileEditModal)
+});
+closeModal;
 profileEditForm.addEventListener("submit", handleProfileFormSubmit);
 
 // Keep your card rendering code

@@ -4,12 +4,17 @@
   position: relative;
 }
 
+
 .card__image {
   max-width: 413px;
   height: 413px;
   object-fit: cover;
   border-radius: 8px;
   display: block;
+}
+
+.Card__add-Modal {
+  
 }
 
 .card__title {
@@ -63,12 +68,11 @@
  background-image: url(../images/delete\ Default.svg);
  width: 32px;
  height: 32px;
- top: 10px;
+ top: 81px;
  right: 10px;
  position: absolute;
  border: none;
  background-color: transparent;
- 
 }
 
 .card__delete-button:hover {

@@ -122,6 +122,30 @@
   width: fit-content;
 }
 
+.modal_add-card-input {
+  padding: 16px 12px;
+  color: rgba(33, 33, 33, 0.4);
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 40%;
+  
+}
+
+.modal_add-card-input:hover {
+  
+}
+
+.modal_add-card-label {
+  background: #fff;
+  padding: 32px 50px;
+  max-width: 730px;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  border-radius: 8px;
+}
+
 @media screen and (max-width: 680px) {
   .modal {
     padding: 0px 10px;

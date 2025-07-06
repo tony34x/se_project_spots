@@ -158,6 +158,10 @@
   border-radius: 8px;
 }
 
+.modal__form-new-post {
+  
+}
+
 @media screen and (max-width: 680px) {
   .modal {
     padding: 0px 10px;

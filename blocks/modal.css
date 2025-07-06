@@ -159,7 +159,15 @@
 }
 
 .modal__form-new-post {
-  
+
+}
+
+.caption_modal__input {
+  padding: 16px 12px;
+  color: rgba(33, 33, 33, 0.4);
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 40%;
 }
 
 @media screen and (max-width: 680px) {

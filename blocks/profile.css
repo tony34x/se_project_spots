@@ -100,6 +100,7 @@
   cursor: pointer;
   font-family: Poppins, Arial, Helvetica, sans-serif;
   padding: 18px 32px 18px 32px;
+  
 }
 
 .profile__add-button::before {

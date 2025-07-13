@@ -10,12 +10,18 @@
   align-items: center;
   justify-content: center;
   visibility: hidden;
-  padding: 0 20px;
+  transition: 0.3s;
+  opacity: ease-in 0.3s;
+  padding: 0 10px;
+}
+.modal_type_preview {
+  padding: 0 16px;
 }
 
 .modal_opened {
   visibility: visible;
   padding: 16px;
+  visibility: 0.3;
 }
 
 .modal__container {
@@ -44,13 +50,14 @@
   margin: 0;
 }
 
-.modal__close_type_preview {
+.modal__close-btn_type_preview {
   top: 0px;
   right: -52.5px;
 }
 
 .modal__close-btn:hover {
   opacity: 100%;
+  background-image: url(../images/x\ out\ icon.svg);
 }
 
 .modal__title {
@@ -129,9 +136,17 @@
 }
 
 .modal__caption {
-  background-color: rgba(33, 33, 33, 1);
-  color: white;
-  width: fit-content;
+  margin: 0;
+  padding: 4px 8px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #fff;
+  position: absolute;
+  background-color: #212121;
+  border-radius: 8px;
+  left: 0;
+  top: calc(100% + 10px);
 }
 
 .modal_add-card-input {
@@ -140,11 +155,10 @@
   border-radius: 8px;
   cursor: pointer;
   opacity: 40%;
-  
 }
 
 .modal_add-card-input:hover {
-  
+  opacity: 1;
 }
 
 .modal_add-card-label {
@@ -158,10 +172,6 @@
   border-radius: 8px;
 }
 
-.modal__form-new-post {
-
-}
-
 .caption_modal__input {
   padding: 16px 12px;
   color: rgba(33, 33, 33, 0.4);
@@ -170,11 +180,11 @@
   opacity: 40%;
 }
 
-@media screen and (max-width: 680px) {
-  .modal {
-    padding: 0px 10px;
-  }
+.caption_modal__input:hover {
+  opacity: 1;
+}
 
+@media screen and (max-width: 680px) {
   .modal__container {
     padding: 12px;
     gap: 24px;
@@ -199,9 +209,7 @@
     border-radius: 8px;
   }
 }
-
-@media screen and (max-width: 680px) {
-  .modal__close_type_prewiew {
+  .modal__close-btn_type_prewiew  {
     top: -48px;
     right: 0px;
   }
@@ -209,4 +217,3 @@
   .modal__image {
     max-width: unset;
   }
-}

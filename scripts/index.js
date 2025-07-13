@@ -33,26 +33,40 @@ const initialCards = [
 const profileEditButton = document.querySelector(".profile__edit-button");
 const profileEditModal = document.querySelector("#edit-profile-modal");
 const profileEditModalCloseButton =
+
 profileEditModal.querySelector(".modal__close-btn");
+
+
+// card  and images and caption //
 const cardsList = document.querySelector(".cards__list");
-const addcardmodal =document.querySelector("#add-card-modal")
+const addcardmodal =document.querySelector("#add-card-modal");
+const newpostaddcard = document.querySelector("#new_post-add-card");
+const imagelinkurl = document.querySelector("#image-link_url");
+const captioninput = document.querySelector("#caption_input");
 
 
+// Define the addCardModal
+
+
+
+// profile//
+const nameInput = document.querySelector("#profile-name-input");
+const descriptionInput = document.querySelector("#profile-description-input");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 
-
+// form //
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 
 
-const nameInput = document.querySelector("#profile-name-input");
-const descriptionInput = document.querySelector("#profile-description-input");
 
+// Preview modal //
 const previewModal = document.querySelector("#preview-modal");
 const previewModalCloseBth = previewModal.querySelector(".modal__close-btn");
 const previewImageEl = previewModal.querySelector(".modal__image");
 const previewcaption = previewModal.querySelector(".modal__caption");
 const profileaddbutton = document.querySelector(".profile__add-button")
+
 
 
 //to use
@@ -64,8 +78,17 @@ function closeModal(modal) {
   modal.classList.remove("modal_opened");
 }
 
+profileEditForm.addEventListener('submit', handleProfileFormSubmit);
+
 function handleProfileFormSubmit(evt) {
-  evt.preventDefault();
+  evt.preventDefault(); // create card modal has the same issue - it does not have preventDefaut
+  profileName.textContent = nameInput.value;
+  profileDescription.textContent = descriptionInput.value;
+  closeModal(profileEditModal);
+}
+
+function handleProfileFormSubmit(evt) {
+  evt.preventDefault(); // create card modal has the same issue - it does not have preventDefaut
   profileName.textContent = nameInput.value;
   profileDescription.textContent = descriptionInput.value;
   closeModal(profileEditModal);
@@ -93,20 +116,9 @@ function getCardElement(data) {
   cardTitle.textContent = data.name;
 
   cardlikebutton.addEventListener("click", () => {
+
     cardlikebutton.classList.toggle("card__like-button_active");
   });
-
-//still working//
-
-//addcardbutton.addEventListener("click", function (){
- // addcardModal.classList.add("modal_opened");
-  
-//});
-
-
-//addCardcloseBtn.addEventListener("click", function () {
- // addcardModal.classList.remove("modal_opened")
-//});
 
 
   cardDeleteButton.addEventListener("click", () => {
@@ -130,6 +142,12 @@ previewModalCloseBth.addEventListener("click", () => {
   closeModal(previewModal);
 });
 
+// modalclosebtn.addEventListener("click", () => {
+//   closeModal(modalclosebtn);
+// });
+
+// need help with try to close the new post button
+
 
 profileEditButton.addEventListener("click", handleProfileEditButtonClick);
 
@@ -138,23 +156,23 @@ profileEditModalCloseButton.addEventListener("click", () => {
 });
 
 
-//still working//
+
 
 const newpostbutton = document.querySelector(".profile__add-button");
-// const profileaddButton = cardElement.querySelector(".card__image");
 newpostbutton.addEventListener("click",() => {
   openModal(addcardmodal)
 })
 
-// profileaddButton.addEventListener("submit", function (event) {
-//   evt.preventDefault();
-//  console.log(captionInput.value);
-//   console.log(linkInput.value);
-//   const cardElement = getCardElement({});
-//   cardsList.prepend(cardElement);
-//  addcardModal.classList.remove(".modal_opened")
-// });
+// Remember camel case modalFormNewPost
+const imageUrl = document.getElementById("image-link_url").value;
+newpostaddcard.addEventListener("submit", (evt) =>{
+evt.preventDefault();
+imagelinkurl.src = data.link;
+captioninput.alt = data.name;
+console.log("data")
 
+  // Work on creating the card
+})
 
 
 

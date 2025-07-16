@@ -138,16 +138,6 @@ function getCardElement(data) {
   return cardElement;
 }
 
-// previewModalCloseBth.addEventListener("click", () => {
-//   closeModal(previewModal);
-// });
-
-// modalclosebtn.addEventListener("click", () => {
-//   closeModal(modalclosebtn);
-// });
-
-// need help with try to close the new post button
-
 
 profileEditButton.addEventListener("click", handleProfileEditButtonClick);
 
@@ -177,7 +167,7 @@ newpostaddcard.addEventListener("submit", (evt) => {
   // imagelinkurl.src = data.link;
   // captioninput.alt = data.name;
   // TODO: close modal
-  const modalclosebtn = document.querySelector(".modal__close-btn")
+  const modalclosebtn = document.querySelector(".modal__close-btn");
   newpostaddcard.addEventListener("click", () => {
   closeModal(modalclosebtn);
 });

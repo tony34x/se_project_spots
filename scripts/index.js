@@ -39,8 +39,8 @@ profileEditModal.querySelector(".modal__close-btn");
 
 // card  and images and caption //
 const cardsList = document.querySelector(".cards__list");
-const addcardmodal =document.querySelector("#add-card-modal");
-const newpostaddcard = document.querySelector("#new_post-add-card");
+const addcardmodal = document.querySelector("#add-card-modal");
+const newpostaddcard = document.querySelector("#new_post-add-card"); // newPostAddCard
 const imagelinkurl = document.querySelector("#image-link_url");
 const captioninput = document.querySelector("#caption_input");
 
@@ -138,9 +138,9 @@ function getCardElement(data) {
   return cardElement;
 }
 
-previewModalCloseBth.addEventListener("click", () => {
-  closeModal(previewModal);
-});
+// previewModalCloseBth.addEventListener("click", () => {
+//   closeModal(previewModal);
+// });
 
 // modalclosebtn.addEventListener("click", () => {
 //   closeModal(modalclosebtn);
@@ -156,8 +156,6 @@ profileEditModalCloseButton.addEventListener("click", () => {
 });
 
 
-
-
 const newpostbutton = document.querySelector(".profile__add-button");
 newpostbutton.addEventListener("click",() => {
   openModal(addcardmodal)
@@ -165,16 +163,26 @@ newpostbutton.addEventListener("click",() => {
 
 // Remember camel case modalFormNewPost
 const imageUrl = document.getElementById("image-link_url").value;
-newpostaddcard.addEventListener("submit", (evt) =>{
-evt.preventDefault();
-imagelinkurl.src = data.link;
-captioninput.alt = data.name;
-console.log("data")
 
-  // Work on creating the card
-})
+newpostaddcard.addEventListener("submit", (evt) => {
+  evt.preventDefault();
 
+  const formData = new FormData(evt.target);
+  const cardData = Object.fromEntries(formData);
 
+  // TODO: create card
+  const cardElement = getCardElement(cardData);
+  cardsList.prepend(cardElement);
+
+  // imagelinkurl.src = data.link;
+  // captioninput.alt = data.name;
+  // TODO: close modal
+  const modalclosebtn = document.querySelector(".modal__close-btn")
+  newpostaddcard.addEventListener("click", () => {
+  closeModal(modalclosebtn);
+});
+
+});
 
 // Keep your card rendering//
 initialCards.forEach((cardData) => {

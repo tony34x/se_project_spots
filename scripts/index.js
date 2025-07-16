@@ -126,7 +126,7 @@ function getCardElement(data) {
   });
 
   cardImage.addEventListener("click", () => {
-    cardImage.classList.add(cardImage);
+    cardImage.classList.add("cardImage");
   });
 
   cardImage.addEventListener("click", () => {

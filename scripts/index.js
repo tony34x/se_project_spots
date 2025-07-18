@@ -139,7 +139,11 @@ function getCardElement(data) {
 }
 
 
+
+
 profileEditButton.addEventListener("click", handleProfileEditButtonClick);
+
+
 
 profileEditModalCloseButton.addEventListener("click", () => {
   closeModal(profileEditModal);
@@ -150,6 +154,12 @@ const newpostbutton = document.querySelector(".profile__add-button");
 newpostbutton.addEventListener("click",() => {
   openModal(addcardmodal)
 })
+
+const newPostCloseButton = addcardmodal.querySelector(".modal__close-btn");
+newPostCloseButton.addEventListener("click", () => {
+  closeModal(addcardmodal);
+});
+
 
 // Remember camel case modalFormNewPost
 const imageUrl = document.getElementById("image-link_url").value;
@@ -167,11 +177,13 @@ newpostaddcard.addEventListener("submit", (evt) => {
   // imagelinkurl.src = data.link;
   // captioninput.alt = data.name;
   // TODO: close modal
-  const modalclosebtn = document.querySelector(".modal__close-btn");
-  newpostaddcard.addEventListener("click", () => {
-  closeModal(modalclosebtn);
-});
+  
 
+
+
+  // newpostaddcard.addEventListener("click", () => {
+  //   closeModal(modalclosebtn);
+  // });
 });
 
 // Keep your card rendering//

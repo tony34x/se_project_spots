@@ -33,7 +33,6 @@ const initialCards = [
 const profileEditButton = document.querySelector(".profile__edit-button");
 const profileEditModal = document.querySelector("#edit-profile-modal");
 const profileEditModalCloseButton =
-
 profileEditModal.querySelector(".modal__close-btn");
 
 
@@ -54,6 +53,7 @@ const nameInput = document.querySelector("#profile-name-input");
 const descriptionInput = document.querySelector("#profile-description-input");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
+const profileaddbutton = document.querySelector(".profile__add-button")
 
 // form //
 const profileEditForm = profileEditModal.querySelector(".modal__form");
@@ -65,7 +65,7 @@ const previewModal = document.querySelector("#preview-modal");
 const previewModalCloseBth = previewModal.querySelector(".modal__close-btn");
 const previewImageEl = previewModal.querySelector(".modal__image");
 const previewcaption = previewModal.querySelector(".modal__caption");
-const profileaddbutton = document.querySelector(".profile__add-button")
+
 
 
 
@@ -87,12 +87,7 @@ function handleProfileFormSubmit(evt) {
   closeModal(profileEditModal);
 }
 
-function handleProfileFormSubmit(evt) {
-  evt.preventDefault(); // create card modal has the same issue - it does not have preventDefaut
-  profileName.textContent = nameInput.value;
-  profileDescription.textContent = descriptionInput.value;
-  closeModal(profileEditModal);
-}
+
 
 function handleProfileEditButtonClick() {
   nameInput.value = profileName.textContent;
@@ -122,7 +117,7 @@ function getCardElement(data) {
 
 
   cardDeleteButton.addEventListener("click", () => {
-    cardDeleteButton.closest(".card").remove();
+    cardDeleteButton.closest(".card")
   });
 
   cardImage.addEventListener("click", () => {
@@ -160,6 +155,9 @@ newPostCloseButton.addEventListener("click", () => {
   closeModal(addcardmodal);
 });
 
+previewModalCloseBth.addEventListener("click", () => {
+  closeModal(previewModal);
+});
 
 // Remember camel case modalFormNewPost
 const imageUrl = document.getElementById("image-link_url").value;
@@ -174,16 +172,7 @@ newpostaddcard.addEventListener("submit", (evt) => {
   const cardElement = getCardElement(cardData);
   cardsList.prepend(cardElement);
 
-  // imagelinkurl.src = data.link;
-  // captioninput.alt = data.name;
-  // TODO: close modal
   
-
-
-
-  // newpostaddcard.addEventListener("click", () => {
-  //   closeModal(modalclosebtn);
-  // });
 });
 
 // Keep your card rendering//

@@ -10,9 +10,9 @@
   align-items: center;
   justify-content: center;
   visibility: hidden;
-  transition: 0.3s;
-  opacity: ease-in 0.3s;
+  transition: visibility 0.3s, opacity 0.3s ease-in;
   padding: 0 10px;
+  opacity: 0;
 }
 .modal_type_preview {
   padding: 0 16px;
@@ -20,8 +20,7 @@
 
 .modal_opened {
   visibility: visible;
-  padding: 16px;
-  visibility: 0.3;
+  opacity: 1;
 }
 
 .modal__container {
@@ -53,6 +52,7 @@
 .modal__close-btn_type_preview {
   top: 0px;
   right: -52.5px;
+  background-image: url(../images/x\ out\ icon.svg);
 }
 
 .modal__close-btn:hover {
@@ -213,9 +213,9 @@
     font-size: 16px
   }
 }
-  .modal__close-btn_type_prewiew  {
-    top: -48px;
-    right: 0px;
+  .modal__close-btn_type_preview  {
+    top: 0px;
+    right: -52.5px;
   }
 
   .modal__image {

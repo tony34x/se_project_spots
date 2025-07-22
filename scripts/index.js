@@ -106,8 +106,8 @@ function getCardElement(data) {
 
   console.log(data);
 
-  cardImage.src = data.link;
-  cardImage.alt = data.name;
+  cardImage.src = data.link;//cardImage of the card
+  cardImage.alt = data.name;//cardImage of the card name
   cardTitle.textContent = data.name;
 
   cardlikebutton.addEventListener("click", () => {
@@ -119,6 +119,8 @@ function getCardElement(data) {
   cardDeleteButton.addEventListener("click", () => {
     cardDeleteButton.closest(".card")
   });
+
+  
 
   cardImage.addEventListener("click", () => {
     cardImage.classList.add("cardImage");
@@ -154,7 +156,7 @@ const newPostCloseButton = addcardmodal.querySelector(".modal__close-btn");
 newPostCloseButton.addEventListener("click", () => {
   closeModal(addcardmodal);
 });
-
+//previewModal//
 previewModalCloseBth.addEventListener("click", () => {
   closeModal(previewModal);
 });

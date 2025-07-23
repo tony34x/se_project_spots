@@ -117,7 +117,7 @@ function getCardElement(data) {
 
 
   cardDeleteButton.addEventListener("click", () => {
-    cardDeleteButton.closest(".card")
+    cardDeleteButton.remove(".card")
   });
 
   
@@ -172,7 +172,7 @@ newpostaddcard.addEventListener("submit", (evt) => {
 
   // TODO: create card
   const cardElement = getCardElement(cardData);
-  cardsList.prepend(cardElement);
+  cardsList.reset(cardElement);
 
   
 });

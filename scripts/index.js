@@ -117,7 +117,7 @@ function getCardElement(data) {
 
 
   cardDeleteButton.addEventListener("click", () => {
-    cardElement.remove(".card");
+    cardElement.remove();
   });
 
   

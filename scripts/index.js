@@ -111,8 +111,8 @@ function getCardElement(data) {
   cardTitle.textContent = data.name;
 
   cardlikebutton.addEventListener("click", () => {
-
     cardlikebutton.classList.toggle("card__like-button_active");
+    
   });
 
 

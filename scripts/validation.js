@@ -2,6 +2,7 @@
 const showInputError = (formList, inputElement, errorMsg) => {
   const errorMsgEl = document.querySelector('#${inputElement.id}-error');
   errorMsgEl.textContent = errorMsg;
+ console.log(inputElement);
 };
 
 // hideInputError//

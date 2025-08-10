@@ -43,6 +43,6 @@ const enableValidation = () => {
   });
 };
 
-
+console.log(inputElement);
 
 enableValidation();

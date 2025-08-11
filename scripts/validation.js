@@ -1,18 +1,15 @@
 // showInputError//
 const showInputError = (formList, inputElement, errorMsg) => {
-  const errorMsgEl = document.querySelector('#${inputElement.id}-error');
+  const errorMsgEl = document.querySelector(`#${inputElement.id}-error`);
   errorMsgEl.textContent = errorMsg;
- console.log(inputElement);
+  console.log(inputElement);
 };
 
 // hideInputError//
 const hideInputError = (formList, inputElement, errorMsg) => {
-  const errortext = document.querySelector('#${inputElement.id}-error');
-  errortext.textContent = "";
-  console.log(inputElement);
+  const errorMsgEl = document.querySelector(`#${inputElement.id}-error`);
+  errorMsgEl.textContent = "";
 };
-
-
 
 // checkInputValidity//
 const checkInputValidity = (formList, inputElement) => {
@@ -27,23 +24,26 @@ const setEventListeners = (formList) => {
   const inputList = Array.from(formList.querySelectorAll(".modal__input"));
   const buttonElement = formList.querySelector(".modal__submit-btn");
 
-  toggleButtonState(inputList, buttonElement);
+ const toggleButtonState = (inputList, buttonElement) => {
+  if (!inputElement.validity.valid) {
+}
 
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", function () {
       checkInputValidity(formList, inputElement);
-      //   toggleButtonState(inputList, buttonElement);
+        toggleButtonState(inputList, buttonElement);
     });
   });
 };
 
 const enableValidation = () => {
-  const formList = document.querySelectorAll(".modal_form");
+  const formList = document.querySelectorAll(".modal__form");
   formList.forEach((formList) => {
     setEventListeners(formList);
+    console.log(formList);
   });
 };
 
-
+console.log("it working");
 
 enableValidation();

@@ -50,12 +50,17 @@
 }
 .modal__error {
   display: block;
+  visibility: hidden;
   color: rgba(255, 0, 0, 0.7);
   font-family: Poppins;
   font-weight: 500;
   font-style: Medium;
   font-size: 16px;
   margin-top: 8px;
+}
+
+.modal__error_visible {
+  visibility: visible;
 }
 
 .modal__close-btn_type_preview {

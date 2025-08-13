@@ -39,7 +39,8 @@ profileEditModal.querySelector(".modal__close-btn");
 // card  and images and caption //
 const cardsList = document.querySelector(".cards__list");
 const addcardmodal = document.querySelector("#add-card-modal");
-const newpostaddcard = document.querySelector("#new_post-add-card"); // newPostAddCard
+const newpostaddcard = document.querySelector("#new_post-add-card");
+// const cardSubmitbutton = cardmodal.querySelector(".modal__button"); 
 const imagelinkurl = document.querySelector("#image-link_url");
 const captioninput = document.querySelector("#caption_input");
 
@@ -111,7 +112,7 @@ function getCardElement(data) {
   cardTitle.textContent = data.name;
 
   cardlikebutton.addEventListener("click", () => {
-    cardlikebutton.classList.toggle("card__like-button_active");
+   cardlikebutton.classList.toggle("card__like-button_active");
     
   });
 
@@ -161,7 +162,6 @@ previewModalCloseBth.addEventListener("click", () => {
   closeModal(previewModal);
 });
 
-// Remember camel case modalFormNewPost
 const imageUrl = document.getElementById("image-link_url").value;
 
 newpostaddcard.addEventListener("submit", (evt) => {
@@ -174,7 +174,8 @@ newpostaddcard.addEventListener("submit", (evt) => {
   const cardElement = getCardElement(cardData);
   cardsList.prepend(cardElement);
   closeModal(addcardmodal);
-  newpostaddcard.reset()
+  disablebutton(cardSubmitbutton);
+  newpostaddcard.reset();
   
 });
 

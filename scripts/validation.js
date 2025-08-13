@@ -46,17 +46,23 @@ const disabledbutton = (buttonElement) => {
 
 };
 
+const resetValidation = (inputList ,) => {
+  inputList.forEach((input)=> {
+    hideInputError(input)
+  });
+};
+
 
 //setEventListeners//
-const setEventListeners = (form) => {
-  const inputList = Array.from(form.querySelectorAll(".modal__input"));
-  const buttonElement = form.querySelector(".modal__submit-btn");
+function setEventListeners(form) {
+    const inputList = Array.from(form.querySelectorAll(".modal__input"));
+    const buttonElement = form.querySelector(".modal__submit-btn");
 
-  inputList.forEach(input => {
-    input.addEventListener("keydown", () => {
-        checkInputValidity(input);
+    inputList.forEach(input => {
+        input.addEventListener("keydown", () => {
+            checkInputValidity(input);
+        });
     });
-  });
 }
 
 

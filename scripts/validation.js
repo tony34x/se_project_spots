@@ -50,6 +50,7 @@ const resetValidation = (inputList ,) => {
   inputList.forEach((input)=> {
     hideInputError(input)
   });
+  
 };
 
 

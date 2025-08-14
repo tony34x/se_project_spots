@@ -29,46 +29,35 @@ const initialCards = [
   },
 ];
 
-
 const profileEditButton = document.querySelector(".profile__edit-button");
 const profileEditModal = document.querySelector("#edit-profile-modal");
-const profileEditModalCloseButton =
-profileEditModal.querySelector(".modal__close-btn");
-
+const profileEditModalCloseButton = profileEditModal.querySelector(".modal__close-btn");
 
 // card  and images and caption //
 const cardsList = document.querySelector(".cards__list");
 const addcardmodal = document.querySelector("#add-card-modal");
 const newpostaddcard = document.querySelector("#new_post-add-card");
-// const cardSubmitbutton = cardmodal.querySelector(".modal__button"); 
+// const cardSubmitbutton = cardmodal.querySelector(".modal__button");
 const imagelinkurl = document.querySelector("#image-link_url");
 const captioninput = document.querySelector("#caption_input");
 
-
 // Define the addCardModal
-
-
 
 // profile//
 const nameInput = document.querySelector("#profile-name-input");
 const descriptionInput = document.querySelector("#profile-description-input");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
-const profileaddbutton = document.querySelector(".profile__add-button")
+const profileaddbutton = document.querySelector(".profile__add-button");
 
 // form //
 const profileEditForm = profileEditModal.querySelector(".modal__form");
-
-
 
 // Preview modal //
 const previewModal = document.querySelector("#preview-modal");
 const previewModalCloseBth = previewModal.querySelector(".modal__close-btn");
 const previewImageEl = previewModal.querySelector(".modal__image");
 const previewcaption = previewModal.querySelector(".modal__caption");
-
-
-
 
 //to use
 function openModal(modal) {
@@ -79,7 +68,7 @@ function closeModal(modal) {
   modal.classList.remove("modal_opened");
 }
 
-profileEditForm.addEventListener('submit', handleProfileFormSubmit);
+profileEditForm.addEventListener("submit", handleProfileFormSubmit);
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault(); // create card modal has the same issue - it does not have preventDefaut
@@ -88,11 +77,10 @@ function handleProfileFormSubmit(evt) {
   closeModal(profileEditModal);
 }
 
-
-
 function handleProfileEditButtonClick() {
   nameInput.value = profileName.textContent;
   descriptionInput.value = profileDescription.textContent;
+  resetValidation(editForm, [nameInput, descriptionInput]);
   openModal(profileEditModal);
 }
 
@@ -107,21 +95,17 @@ function getCardElement(data) {
 
   console.log(data);
 
-  cardImage.src = data.link;//cardImage of the card
-  cardImage.alt = data.name;//cardImage of the card name
+  cardImage.src = data.link; //cardImage of the card
+  cardImage.alt = data.name; //cardImage of the card name
   cardTitle.textContent = data.name;
 
   cardlikebutton.addEventListener("click", () => {
-   cardlikebutton.classList.toggle("card__like-button_active");
-    
+    cardlikebutton.classList.toggle("card__like-button_active");
   });
-
 
   cardDeleteButton.addEventListener("click", () => {
     cardElement.remove();
   });
-
-  
 
   cardImage.addEventListener("click", () => {
     cardImage.classList.add("cardImage");
@@ -136,22 +120,16 @@ function getCardElement(data) {
   return cardElement;
 }
 
-
-
-
 profileEditButton.addEventListener("click", handleProfileEditButtonClick);
-
-
 
 profileEditModalCloseButton.addEventListener("click", () => {
   closeModal(profileEditModal);
 });
 
-
 const newpostbutton = document.querySelector(".profile__add-button");
-newpostbutton.addEventListener("click",() => {
-  openModal(addcardmodal)
-})
+newpostbutton.addEventListener("click", () => {
+  openModal(addcardmodal);
+});
 
 const newPostCloseButton = addcardmodal.querySelector(".modal__close-btn");
 newPostCloseButton.addEventListener("click", () => {
@@ -176,7 +154,6 @@ newpostaddcard.addEventListener("submit", (evt) => {
   closeModal(addcardmodal);
   disablebutton(cardSubmitbutton);
   newpostaddcard.reset();
-  
 });
 
 // Keep your card rendering//

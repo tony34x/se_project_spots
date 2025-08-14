@@ -66,8 +66,6 @@ function setEventListeners(form) {
     });
 }
 
-
-
 inputList.forEach((inputElement) => {
   inputElement.addEventListener("input", function () {
     checkInputValidity(inputElement);

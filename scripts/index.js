@@ -35,7 +35,7 @@ const profileEditModalCloseButton = profileEditModal.querySelector(".modal__clos
 
 // card  and images and caption //
 const cardsList = document.querySelector(".cards__list");
-const addCardModal = document.querySelector("#add-Card-Modal");
+const addcardmodal = document.querySelector("#add-card-modal");
 const newPostAddCard = document.querySelector("#new_Post-Add-Card");
 const cardSubmitbutton = document.querySelector("modal__submit-btn");
 const modalsubmit = document.querySelector("#card-Submit-button");
@@ -141,7 +141,7 @@ previewModalCloseBth.addEventListener("click", () => {
 
 const imageUrl = document.getElementById("image-link_url").value;
 
-newpostaddcard.addEventListener("submit", (evt) => {
+newPostAddCard.addEventListener("submit", (evt) => {
   evt.preventDefault();
 
   const formData = new FormData(evt.target);
@@ -152,7 +152,7 @@ newpostaddcard.addEventListener("submit", (evt) => {
   cardsList.prepend(cardElement);
   closeModal(addcardmodal);
   disabledButton(cardSubmitbutton);
-  newpostaddcard.reset();
+newPostAddCard.reset();
 });
 
 // Keep your card rendering//

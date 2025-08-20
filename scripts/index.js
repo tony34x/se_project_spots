@@ -141,7 +141,7 @@ previewModalCloseBth.addEventListener("click", () => {
 
 const imageUrl = document.getElementById("image-link_url").value;
 
-newPostaddcard.addEventListener("submit", (evt) => {
+newpostaddcard.addEventListener("submit", (evt) => {
   evt.preventDefault();
 
   const formData = new FormData(evt.target);

@@ -39,22 +39,18 @@ const hasInvalidInput = (inputList) => {
 
 const toggleButtonState = (inputList, buttonElement) => {
   if (hasInvalidInput(inputList)) {
-    disabledButton(buttonElement);
+    buttonElement.disabled = true;
+    buttonElement.classList.add(settings.inactiveButtonClass);
   } else {
     buttonElement.disabled = false;
+    buttonElement.classList.remove(settings.inactiveButtonClass);
   }
 };
-
-const disabledButton = (buttonElement) => {
-  buttonElement.disabled = true;
-};
-
 const resetValidation = (inputList) => {
   inputList.forEach((input) => {
     hideInputError(input);
   });
 };
-
 
 
 
@@ -69,9 +65,16 @@ function enableValidation(config) {
 
 //setEventListeners//
 function setEventListeners(formElement, config) {
-  // Use config.submitButtonSelector instead of ".modal__button"
+  const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
   const buttonElement = formElement.querySelector(config.submitButtonSelector);
 
-};
+  toggleButtonState(inputList, buttonElement);
 
+  inputList.forEach((inputElement) => {
+    inputElement.addEventListener("input", () => {
+      checkInputValidity(inputElement);
+      toggleButtonState(inputList, buttonElement);
+    });
+  });
+}
 enableValidation(settings);

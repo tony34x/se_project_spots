@@ -1,11 +1,12 @@
 const settings = {
-  formSelector: ".modal",
+  formSelector: ".modal__form",   // target forms, not modals
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-btn",
   inactiveButtonClass: "modal__button_disabled",
   inputErrorClass: "modal__error_visible",
   errorClass: "modal__error",
 };
+
 // showInputError 1//
 const showInputError = (inputElement, errorMsg) => {
   const errorMsgEl = document.querySelector(`#${inputElement.id}-error`);

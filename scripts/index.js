@@ -35,8 +35,8 @@ const profileEditModalCloseButton = profileEditModal.querySelector(".modal__clos
 
 // card  and images and caption //
 const cardsList = document.querySelector(".cards__list");
-const addcardmodal = document.querySelector("#add-card-modal");
-const newpostaddcard = document.querySelector("#new_post-add-card");
+const addCardModal = document.querySelector("#add-Card-Modal");
+const newPostAddCard = document.querySelector("#new_Post-Add-Card");
 const cardSubmitbutton = document.querySelector("modal__submit-btn");
 const modalsubmit = document.querySelector("#card-Submit-button");
 const imagelinkurl = document.querySelector("#image-link_url");

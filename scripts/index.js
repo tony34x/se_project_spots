@@ -151,7 +151,7 @@ newpostaddcard.addEventListener("submit", (evt) => {
   const cardElement = getCardElement(cardData);
   cardsList.prepend(cardElement);
   closeModal(addcardmodal);
-  disabledButton(cardSubmitbutton);
+  toggleButtonState(inputList, buttonElement);
   newpostaddcard.reset();
 });
 

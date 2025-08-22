@@ -75,6 +75,7 @@ function setEventListeners(formElement, config) {
     inputElement.addEventListener("input", () => {
       checkInputValidity(inputElement);
       toggleButtonState(inputList, buttonElement);
+      console.log(toggleButtonState)
     });
   });
 }

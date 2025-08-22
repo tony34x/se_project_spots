@@ -39,7 +39,7 @@
   right: 50px;
   width: 40px;
   height: 40px;
-  background-image: url(../images/x\ out\ icon\ gray.svg);
+  background-image: url(../images/xouticongray.svg);
   cursor: pointer;
   opacity: 0.4;
   background-color: transparent;
@@ -52,7 +52,7 @@
   display: block;
   visibility: hidden;
   color: rgba(255, 0, 0, 0.7);
-  font-family: Poppins;
+  font-family: Poppins, Arial, Helvetica, sans-serif;;
   font-weight: 500;
   font-style: normal;
   font-size: 16px;
@@ -66,12 +66,12 @@
 .modal__close-btn_type_preview {
   top: -52.5px;
   right: 0;
-  background-image: url(../images/x\ out\ icon.svg);
+  background-image: url(../images/xouticon.svg);
 }
 
 .modal__close-btn:hover {
   opacity: 100%;
-  background-image: url(../images/x\ out\ icon.svg);
+  background-image: url(../images/xouticon.svg);
 }
 
 .modal__title {

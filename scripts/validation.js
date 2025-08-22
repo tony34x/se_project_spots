@@ -11,7 +11,7 @@ const settings = {
 const showInputError = (inputElement, errorMsg) => {
   const errorMsgEl = document.querySelector(`#${inputElement.id}-error`);
   errorMsgEl.textContent = errorMsg;
-  errorMsgEl.classList.add("modal__error_visible");
+  errorMsgEl.classList.add("settings.errorClass");
   console.log(1);
 };
 
@@ -19,7 +19,7 @@ const showInputError = (inputElement, errorMsg) => {
 const hideInputError = (inputElement) => {
   const errorMsgEl = document.querySelector(`#${inputElement.id}-error`);
   errorMsgEl.textContent = "";
-  errorMsgEl.classList.remove("modal__error_visible");
+  errorMsgEl.classList.remove("settings.errorClass");
   console.log(2);
 };
 

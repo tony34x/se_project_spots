@@ -31,7 +31,8 @@ const initialCards = [
 
 const profileEditButton = document.querySelector(".profile__edit-button");
 const profileEditModal = document.querySelector("#edit-profile-modal");
-const profileEditModalCloseButton = profileEditModal.querySelector(".modal__close-btn");
+const profileEditModalCloseButton =
+  profileEditModal.querySelector(".modal__close-btn");
 
 // card  and images and caption //
 const cardsList = document.querySelector(".cards__list");

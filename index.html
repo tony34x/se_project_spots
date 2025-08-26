@@ -61,11 +61,7 @@
             type="button"
             class="modal__close-btn modal__close-btn_type_preview"
           ></button>
-          <img
-            src="#"
-            alt=""
-            class="modal__image"
-          />
+          <img src="#" alt="" class="modal__image" />
           <p class="modal__caption">Golden Gate bridge</p>
         </div>
       </div>
@@ -77,7 +73,12 @@
             class="modal__close-btn"
           ></button>
           <h2 class="modal__title">Edit Profile</h2>
-          <form name="edit-profile" id="edit-profile-form" class="modal__form" novalidate>
+          <form
+            name="edit-profile"
+            id="edit-profile-form"
+            class="modal__form"
+            novalidate
+          >
             <label for="profile-name-input" class="modal__label">
               name
               <input
@@ -89,6 +90,7 @@
                 placeholder="Name"
                 required
               />
+              <span class="modal__error" id="profile-name-input-error"></span>
             </label>
             <label for="profile-description-input" class="modal__label">
               description
@@ -101,8 +103,16 @@
                 placeholder="describe yourself"
                 required
               />
+              <span class="modal__error" id="profile-description-input-error">
+              </span>
             </label>
-            <button  id="card-Submit-button" type="submit" class="modal__submit-btn">Save</button>
+            <button
+              id="card-Submit-button"
+              type="submit"
+              class="modal__submit-btn"
+            >
+              Save
+            </button>
           </form>
         </div>
       </div>
@@ -126,7 +136,7 @@
                 name="link"
                 required
               />
-
+              <span id="image-link_url-error" class="modal__error"></span>
             </label>
             <label for="caption_input" class="modal__label">
               caption
@@ -140,6 +150,7 @@
                 name="name"
                 required
               />
+              <span id="caption_input-error" class="modal__error"></span>
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>

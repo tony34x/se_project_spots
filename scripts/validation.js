@@ -1,5 +1,5 @@
 const settings = {
-  formSelector: ".modal__form",
+  formSelector: ".modal__form-new-post", // make it disabled//
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-btn",
   inactiveButtonClass: "modal__button_disabled",
@@ -11,16 +11,14 @@ const settings = {
 const showInputError = (inputElement, errorMsg) => {
   const errorMsgEl = document.querySelector(`#${inputElement.id}-error`);
   errorMsgEl.textContent = errorMsg;
-  errorMsgEl.classList.add(settings.errorClass);
-  console.log(1);
+  errorMsgEl.classList.add(settings.inputErrorClass);
 };
 
 // hideInputError 2//
 const hideInputError = (inputElement) => {
   const errorMsgEl = document.querySelector(`#${inputElement.id}-error`);
   errorMsgEl.textContent = "";
-  errorMsgEl.classList.remove(settings.errorClass);
-  console.log(2);
+  errorMsgEl.classList.remove(settings.inputErrorClass);
 };
 
 // checkInputValidity//
@@ -61,6 +59,10 @@ function enableValidation(config) {
     setEventListeners(formElement, config);
   });
 }
+
+  // const inputList = Array.from(
+  //   formElement.querySelectorAll(inputLis)
+  // );
 
 //setEventListeners//
 function setEventListeners(formElement, config) {

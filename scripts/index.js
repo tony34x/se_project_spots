@@ -42,6 +42,7 @@ const cardSubmitbutton = document.querySelector(".modal__submit-btn");
 const modalsubmit = document.querySelector("#card-Submit-button");
 const imagelinkurl = document.querySelector("#image-link_url");
 const captioninput = document.querySelector("#caption_input");
+// const
 // Define the addCardModal
 
 // profile//
@@ -93,6 +94,7 @@ function getCardElement(data) {
   const cardTitle = cardElement.querySelector(".card__title");
   const cardDeleteButton = cardElement.querySelector(".card__delete-button");
 
+
   console.log(data);
 
   cardImage.src = data.link; //cardImage of the card
@@ -140,7 +142,8 @@ previewModalCloseBth.addEventListener("click", () => {
   closeModal(previewModal);
 });
 
-const imageUrl = document.getElementById("image-link_url").value;
+const imageUrl = document.getElementById("image-link_url-error").value;
+
 
 newpostaddcard.addEventListener("submit", (evt) => {
   evt.preventDefault();
@@ -152,6 +155,8 @@ newpostaddcard.addEventListener("submit", (evt) => {
   const cardElement = getCardElement(cardData);
   cardsList.prepend(cardElement);
   closeModal(addcardmodal);
+  const inputList = Array.from(evt.target.querySelectorAll(".modal__input"));
+  const buttonElement = evt.target.querySelector(".modal__submit-btn");
   toggleButtonState(inputList, buttonElement);
   newpostaddcard.reset();
 });

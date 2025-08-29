@@ -3,12 +3,12 @@ const settings = {
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-btn",
   inactiveButtonClass: "modal__button_disabled",
-  inputErrorClass: "modal__error_visible",
-  errorClass: "modal__error",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible",
 };
 
 // showInputError 1//
-const showInputError = (inputElement, errorMsg) => {
+const showInputError = (formElement, inputElement, inputElement.validationMessage, settings); => {
   const errorMsgEl = document.querySelector(`#${inputElement.id}-error`);
   errorMsgEl.textContent = errorMsg;
   errorMsgEl.classList.add(settings.inputErrorClass);

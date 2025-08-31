@@ -35,8 +35,8 @@ const profileEditModalCloseButton =
   profileEditModal.querySelector(".modal__close-btn");
 
 // card  and images and caption //
+const addCardModal = document.querySelector("#add-card-modal");
 const cardsList = document.querySelector(".cards__list");
-const addcardmodal = document.querySelector("#add-card-modal");
 const newpostaddcard = document.querySelector("#new_post-add-card");
 const cardSubmitbutton = document.querySelector(".modal__submit-btn");
 const modalsubmit = document.querySelector("#card-Submit-button");
@@ -130,12 +130,12 @@ profileEditModalCloseButton.addEventListener("click", () => {
 
 const newpostbutton = document.querySelector(".profile__add-button");
 newpostbutton.addEventListener("click", () => {
-  openModal(addcardmodal);
+  openModal(addCardModal);
 });
 
-const newPostCloseButton = addcardmodal.querySelector(".modal__close-btn");
+const newPostCloseButton = addCardModal.querySelector(".modal__close-btn");
 newPostCloseButton.addEventListener("click", () => {
-  closeModal(addcardmodal);
+  closeModal(addCardModal);
 });
 //previewModal//
 previewModalCloseBth.addEventListener("click", () => {
@@ -154,10 +154,10 @@ newpostaddcard.addEventListener("submit", (evt) => {
   // TODO: create card
   const cardElement = getCardElement(cardData);
   cardsList.prepend(cardElement);
-  closeModal(addcardmodal);
+  closeModal(addCardModal);
   const inputList = Array.from(evt.target.querySelectorAll(".modal__input"));
   const buttonElement = evt.target.querySelector(".modal__submit-btn");
-  toggleButtonState(inputList, buttonElement);
+  toggleButtonState(inputList, buttonElement, settings);
   newpostaddcard.reset();
 });
 

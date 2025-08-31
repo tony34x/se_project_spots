@@ -116,6 +116,12 @@
   opacity: 100%;
 }
 
+
+.modal__input_type_error {
+  border: 1px solid #ff0000b2;
+}
+
+
 .modal__submit-btn {
   width: 156px;
   padding: 18px 0;
@@ -127,6 +133,8 @@
   color: #fff;
   border-radius: 8px;
   cursor: pointer;
+
+  
 }
 
 .modal__submit-btn:disabled {
@@ -166,40 +174,7 @@
   top: calc(100% + 10px);
 }
 
-.modal_add-card-input {
-  padding: 16px 12px;
-  color: rgba(33, 33, 33, 0.4);
-  border-radius: 8px;
-  cursor: pointer;
-  opacity: 40%;
-}
 
-.modal_add-card-input:hover {
-  opacity: 1;
-}
-
-.modal_add-card-label {
-  background: #fff;
-  padding: 32px 50px;
-  max-width: 730px;
-  position: relative;
-  box-sizing: border-box;
-  width: 100%;
-  display: flex;
-  border-radius: 8px;
-}
-
-.caption_modal__input {
-  padding: 16px 12px;
-  color: rgba(33, 33, 33, 0.4);
-  border-radius: 8px;
-  cursor: pointer;
-  opacity: 40%;
-}
-
-.caption_modal__input:hover {
-  opacity: 1;
-}
 
 @media screen and (max-width: 680px) {
   .modal__container {

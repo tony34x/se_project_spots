@@ -37,12 +37,11 @@ const profileEditModalCloseButton =
 // card  and images and caption //
 const addCardModal = document.querySelector("#add-card-modal");
 const cardsList = document.querySelector(".cards__list");
-const newpostaddcard = document.querySelector("#new_post-add-card");
+const newPostAddCard = document.querySelector("#new_post-add-card");
 const cardSubmitbutton = document.querySelector(".modal__submit-btn");
 const modalsubmit = document.querySelector("#card-Submit-button");
 const imagelinkurl = document.querySelector("#image-link_url");
 const captioninput = document.querySelector("#caption_input");
-// const
 // Define the addCardModal
 
 // profile//
@@ -82,6 +81,12 @@ function handleProfileFormSubmit(evt) {
 function handleProfileEditButtonClick() {
   nameInput.value = profileName.textContent;
   descriptionInput.value = profileDescription.textContent;
+  const inputList = Array.from(
+    profileEditForm.querySelectorAll(".modal__input")
+  );
+  const buttonElement = profileEditForm.querySelector(".modal__submit-btn");
+  toggleButtonState(inputList, buttonElement);
+  resetValidation(inputList);
   openModal(profileEditModal);
 }
 
@@ -142,10 +147,22 @@ previewModalCloseBth.addEventListener("click", () => {
   closeModal(previewModal);
 });
 
+const modals = document.querySelectorAll(".modal");
+modals.forEach((modal) => {
+  modal.addEventListener("mousedown", (evt) => {
+    if (evt.target.classList.contains("modal_opened")) {
+      closeModal(modal);
+    }
+    if (evt.target.classList.contains("modal__close-btn")) {
+      closeModal(modal);
+    }
+  });
+});
+
 const imageUrl = document.getElementById("image-link_url-error").value;
 
 
-newpostaddcard.addEventListener("submit", (evt) => {
+newPostAddCard.addEventListener("submit", (evt) => {
   evt.preventDefault();
 
   const formData = new FormData(evt.target);
@@ -158,7 +175,7 @@ newpostaddcard.addEventListener("submit", (evt) => {
   const inputList = Array.from(evt.target.querySelectorAll(".modal__input"));
   const buttonElement = evt.target.querySelector(".modal__submit-btn");
   toggleButtonState(inputList, buttonElement, settings);
-  newpostaddcard.reset();
+  newPostAddCard.reset();
 });
 
 // Keep your card rendering//

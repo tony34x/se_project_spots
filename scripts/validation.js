@@ -56,7 +56,7 @@ const resetValidation = (formElement, inputList, settings) => {
 
 function enableValidation(config) {
   // Use config.formSelector instead of ".modal__form"
-  const formList = document.querySelectorAll(config.formSelector);
+  const formList = Array.from(document.querySelectorAll(config.formSelector));
   formList.forEach((formElement) => {
     // Pass the config object to setEventListeners.
     setEventListeners(formElement, config);

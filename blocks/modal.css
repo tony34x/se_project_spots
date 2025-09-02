@@ -208,8 +208,8 @@
 }
 
 .modal__close-btn_type_preview {
-  top: -52.5px;
-  right: 0;
+  top: 0;
+  right:-52.5px;
 }
 
 .modal__image {

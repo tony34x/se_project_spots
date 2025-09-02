@@ -1,5 +1,5 @@
 const settings = {
-  formSelector: ".modal__form", // make it disabled//
+  formSelector: ".modal__form", 
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-btn",
   inactiveButtonClass: "modal__button_disabled",

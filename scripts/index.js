@@ -29,6 +29,18 @@ const initialCards = [
   },
 ];
 
+const modals = document.querySelectorAll(".modal");
+modals.forEach((modal) => {
+  modal.addEventListener("mousedown", (evt) => {
+    if (evt.target.classList.contains("modal_opened")) {
+      closeModal(modal);
+    }
+    if (evt.target.classList.contains("modal__close-btn")) {
+      closeModal(modal);
+    }
+  });
+});
+
 const profileEditButton = document.querySelector(".profile__edit-button");
 const profileEditModal = document.querySelector("#edit-profile-modal");
 const profileEditModalCloseButton =
@@ -114,10 +126,7 @@ function getCardElement(data) {
     cardElement.remove();
   });
 
-  cardImage.addEventListener("click", () => {
-    cardImage.classList.add("cardImage");
-  });
-
+ 
   cardImage.addEventListener("click", () => {
     previewImageEl.src = data.link;
     previewImageEl.alt = data.link;
@@ -145,18 +154,6 @@ newPostCloseButton.addEventListener("click", () => {
 //previewModal//
 previewModalCloseBth.addEventListener("click", () => {
   closeModal(previewModal);
-});
-
-const modals = document.querySelectorAll(".modal");
-modals.forEach((modal) => {
-  modal.addEventListener("mousedown", (evt) => {
-    if (evt.target.classList.contains("modal_opened")) {
-      closeModal(modal);
-    }
-    if (evt.target.classList.contains("modal__close-btn")) {
-      closeModal(modal);
-    }
-  });
 });
 
 const imageUrl = document.getElementById("image-link_url-error").value;

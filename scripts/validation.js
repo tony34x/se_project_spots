@@ -1,5 +1,5 @@
 const settings = {
-  formSelector: ".modal__form-new-post", // make it disabled//
+  formSelector: ".modal__form", // make it disabled//
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-btn",
   inactiveButtonClass: "modal__button_disabled",
@@ -63,9 +63,6 @@ function enableValidation(config) {
   });
 }
 
-// const inputList = Array.from(
-//   formElement.querySelectorAll(inputLis)
-// );
 
 //setEventListeners//
 function setEventListeners(formElement, config) {

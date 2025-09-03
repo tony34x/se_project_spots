@@ -50,7 +50,6 @@ const profileEditModalCloseButton =
 const addCardModal = document.querySelector("#add-card-modal");
 const cardsList = document.querySelector(".cards__list");
 const newPostAddCard = document.querySelector("#new_post-add-card");
-const cardSubmitbutton = document.querySelector(".modal__submit-btn");
 const modalsubmit = document.querySelector("#card-Submit-button");
 const imagelinkurl = document.querySelector("#image-link_url");
 const captioninput = document.querySelector("#caption_input");
@@ -72,13 +71,21 @@ const previewModalCloseBth = previewModal.querySelector(".modal__close-btn");
 const previewImageEl = previewModal.querySelector(".modal__image");
 const previewcaption = previewModal.querySelector(".modal__caption");
 
-//to use
+function handleEscape(evt) {
+  if (evt.key === "Escape") {
+    const activePopup = document.querySelector(".modal_opened");
+    closeModal(activePopup);
+  }
+}
+
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keyup", handleEscape);
 }
-// to use
+
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keyup", handleEscape);
 }
 
 profileEditForm.addEventListener("submit", handleProfileFormSubmit);
@@ -97,8 +104,7 @@ function handleProfileEditButtonClick() {
     profileEditForm.querySelectorAll(".modal__input")
   );
   const buttonElement = profileEditForm.querySelector(".modal__submit-btn");
-  toggleButtonState(inputList, buttonElement);
-  resetValidation(inputList);
+  resetValidation(profileEditForm, [nameInput, descriptionInput], settings);
   openModal(profileEditModal);
 }
 
@@ -110,7 +116,6 @@ function getCardElement(data) {
   const cardImage = cardElement.querySelector(".card__image");
   const cardTitle = cardElement.querySelector(".card__title");
   const cardDeleteButton = cardElement.querySelector(".card__delete-button");
-
 
   console.log(data);
 
@@ -126,7 +131,6 @@ function getCardElement(data) {
     cardElement.remove();
   });
 
- 
   cardImage.addEventListener("click", () => {
     previewImageEl.src = data.link;
     previewImageEl.alt = data.link;
@@ -157,7 +161,6 @@ previewModalCloseBth.addEventListener("click", () => {
 });
 
 const imageUrl = document.getElementById("image-link_url-error").value;
-
 
 newPostAddCard.addEventListener("submit", (evt) => {
   evt.preventDefault();

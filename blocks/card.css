@@ -108,4 +108,29 @@
     line-height: 1;
     max-width: 235px;
   }
+
+.card__like-button {
+  background-image: url(../images/LikeIcon.svg);
+  width: 23px;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  opacity: 40%;
+  background-repeat: no-repeat;
+  top: 425px;
+}
+
+.card__like-button_active {
+  background-image: url(../images/likeheart2.svg);
+  opacity: 1;
+  background-repeat: no-repeat;
+
+}
+
+.card__like-button_active:hover {
+  opacity: 0.4;
+  cursor: pointer;
+
+}
+
 }

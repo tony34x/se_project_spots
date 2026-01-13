@@ -1,4 +1,4 @@
-const settings = {
+export const validationconfig = {
   formSelector: ".modal__form", 
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-btn",
@@ -82,4 +82,4 @@ function setEventListeners(formElement, config) {
     });
   });
 }
-enableValidation(settings);
+

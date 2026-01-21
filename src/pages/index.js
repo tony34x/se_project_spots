@@ -32,17 +32,6 @@ const initialCards = [
   },
 ];
 
-const modals = document.querySelectorAll(".modal");
-modals.forEach((modal) => {
-  modal.addEventListener("mousedown", (evt) => {
-    if (evt.target.classList.contains("modal_opened")) {
-      closeModal(modal);
-    }
-    if (evt.target.classList.contains("modal__close-btn")) {
-      closeModal(modal);
-    }
-  });
-});
 
 const profileEditButton = document.querySelector(".profile__edit-button");
 const profileEditModal = document.querySelector("#edit-profile-modal");

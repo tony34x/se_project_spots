@@ -59,17 +59,3 @@ module.exports = {
     new MiniCssExtractPlugin(),
   ],
 };
-module.exports = {
-  module: {
-    rules: [
-      {
-        // Files with these extensions will be added to the build
-        test: /\.(png|svg|jpg|jpeg|webp|gif|woff(2)?|eot|ttf|otf)$/,
-
-        // Tells webpack to include them as separate files
-        // in the dist directory
-        type: "asset/resource",
-      },
-    ],
-  },
-};

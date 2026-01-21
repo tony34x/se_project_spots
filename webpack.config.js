@@ -7,6 +7,14 @@ module.exports = {
   entry: {
     main: "./src/pages/index.js",
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+      favicon: "./src/images/favicon.ico", // path to the favicon
+    }),
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin(),
+  ],
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
@@ -51,11 +59,4 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/index.html",
-    }),
-    new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin(),
-  ],
 };

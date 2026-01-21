@@ -1,5 +1,5 @@
-import { enableValidation, validationconfig } from "./validate.js";
-import "./index.css";
+import './index.css'; 
+import { enableValidation, validationconfig } from '../scripts/validate.js'
 
 const initialCards = [
   {
@@ -187,3 +187,5 @@ initialCards.forEach((cardData) => {
   cardsList.prepend(cardElement);
   console.log(cardData);
 });
+
+enableValidation(validationconfig);

@@ -2,59 +2,74 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <meta name="description" content="A website showcasing profiles" />
     <meta name="author" content="Your Name" />
     <meta name="keywords" content="html, css, profiles" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="stylesheet" href="./styles/index.css" />
     <title>Spot</title>
   </head>
+
   <body>
     <div class="page">
+      <!-- HEADER -->
       <header class="header">
-        <img src="./images/Logo.svg" alt="Spot Logo" class="header__logo" />
+        <img
+          src="<%= require('./images/Logo.svg') %>"
+          alt="Spot Logo"
+          class="header__logo"
+        />
       </header>
+
+      <!-- MAIN CONTENT -->
       <main class="content">
+        <!-- PROFILE -->
         <section class="profile page__section">
           <img
-            src="./images/avatar.jpg"
+            src="<%= require('./images/avatar.jpg') %>"
             alt="Bessie Coleman"
             class="profile__avatar"
           />
+
           <div class="profile__column">
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
-            <button type="button" class="profile__edit-button">
+            <button
+              type="button"
+              class="profile__edit-button"
+            >
               Edit Profile
             </button>
           </div>
-          <button type="button" class="profile__add-button" id="addcardbutton">
+
+          <button
+            type="button"
+            class="profile__add-button"
+            id="addcardbutton"
+          >
             New Post
           </button>
         </section>
+
+        <!-- CARDS -->
         <section class="cards page__section">
-          <ul class="cards__list">
-            <template id="card-template">
-              <li class="card">
-                <button type="button" class="card__delete-button"></button>
-                <img class="card__image" src="" alt="" />
-                <div class="card__footer">
-                  <h2 class="card__title"></h2>
-                  <button
-                    aria-label="like card"
-                    class="card__like-button"
-                    type="button"
-                  ></button>
-                </div>
-              </li>
-            </template>
-          </ul>
+          <ul class="cards__list"></ul>
+        </section>
+
+        <!-- OPTIONAL ALBUM -->
+        <section class="album-section page__section">
+          <ul class="album"></ul>
         </section>
       </main>
+
+      <!-- FOOTER -->
       <footer class="footer">
-        <p class="footer__text">&copy;Spots</p>
+        <p class="footer__text">&copy; Spots</p>
       </footer>
+
+      <!-- PREVIEW MODAL -->
       <div class="modal modal_type_preview" id="preview-modal">
         <div class="modal__image-container">
           <button
@@ -62,52 +77,59 @@
             class="modal__close-btn modal__close-btn_type_preview"
           ></button>
           <img src="#" alt="" class="modal__image" />
-          <p class="modal__caption">Golden Gate bridge</p>
+          <p class="modal__caption"></p>
         </div>
       </div>
+
+      <!-- EDIT PROFILE MODAL -->
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
           <button
             type="button"
-            id="modalclosebtn"
             class="modal__close-btn"
           ></button>
+
           <h2 class="modal__title">Edit Profile</h2>
+
           <form
             name="edit-profile"
             id="edit-profile-form"
             class="modal__form"
             novalidate
           >
-            <label for="profile-name-input" class="modal__label">
-              name
+            <label class="modal__label">
+              Name
               <input
                 id="profile-name-input"
                 type="text"
                 minlength="2"
                 maxlength="40"
                 class="modal__input"
-                placeholder="Name"
                 required
               />
-              <span class="modal__error" id="profile-name-input-error"></span>
+              <span
+                class="modal__error"
+                id="profile-name-input-error"
+              ></span>
             </label>
-            <label for="profile-description-input" class="modal__label">
-              description
+
+            <label class="modal__label">
+              Description
               <input
                 id="profile-description-input"
                 type="text"
                 minlength="2"
                 maxlength="400"
                 class="modal__input"
-                placeholder="describe yourself"
                 required
               />
-              <span class="modal__error" id="profile-description-input-error">
-              </span>
+              <span
+                class="modal__error"
+                id="profile-description-input-error"
+              ></span>
             </label>
+
             <button
-              id="card-Submit-button"
               type="submit"
               class="modal__submit-btn"
             >
@@ -116,46 +138,85 @@
           </form>
         </div>
       </div>
+
+      <!-- ADD CARD MODAL -->
       <div class="modal" id="add-card-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-btn"></button>
-          <h2 class="modal__title">new post</h2>
+          <button
+            type="button"
+            class="modal__close-btn"
+          ></button>
+
+          <h2 class="modal__title">New Post</h2>
+
           <form
             name="new-post"
             id="new_post-add-card"
             class="modal__form"
             novalidate
           >
-            <label for="image-link_url" class="modal__label-add-card">
-              image link
+            <label class="modal__label">
+              Image link
               <input
                 id="image-link_url"
                 type="url"
                 class="modal__input"
-                placeholder="paste a link to the picture"
                 name="link"
                 required
               />
-              <span id="image-link_url-error" class="modal__error"></span>
+              <span
+                id="image-link_url-error"
+                class="modal__error"
+              ></span>
             </label>
-            <label for="caption_input" class="modal__label">
-              caption
+
+            <label class="modal__label">
+              Caption
               <input
                 id="caption_input"
                 type="text"
                 minlength="2"
                 maxlength="30"
                 class="modal__input"
-                placeholder="type your caption"
                 name="name"
                 required
               />
-              <span id="caption_input-error" class="modal__error"></span>
+              <span
+                id="caption_input-error"
+                class="modal__error"
+              ></span>
             </label>
-            <button type="submit"  class="modal__submit-btn">Save</button>
+
+            <button
+              type="submit"
+              class="modal__submit-btn"
+            >
+              Save
+            </button>
           </form>
         </div>
       </div>
+
+      <!-- CARD TEMPLATE -->
+      <template id="card-template">
+        <li class="card">
+          <button
+            type="button"
+            class="card__delete-button"
+          ></button>
+
+          <img class="card__image" src="" alt="" />
+
+          <div class="card__footer">
+            <h2 class="card__title"></h2>
+            <button
+              class="card__like-button"
+              type="button"
+              aria-label="Like card"
+            ></button>
+          </div>
+        </li>
+      </template>
     </div>
   </body>
 </html>

@@ -1,11 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="A website showcasing profiles" />
     <meta name="author" content="Your Name" />
     <meta name="keywords" content="html, css, profiles" />
@@ -36,19 +33,12 @@
           <div class="profile__column">
             <h1 class="profile__name">Bessie Coleman</h1>
             <p class="profile__description">Civil Aviator</p>
-            <button
-              type="button"
-              class="profile__edit-button"
-            >
+            <button type="button" class="profile__edit-button">
               Edit Profile
             </button>
           </div>
 
-          <button
-            type="button"
-            class="profile__add-button"
-            id="addcardbutton"
-          >
+          <button type="button" class="profile__add-button" id="addcardbutton">
             New Post
           </button>
         </section>
@@ -84,10 +74,7 @@
       <!-- EDIT PROFILE MODAL -->
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
-          <button
-            type="button"
-            class="modal__close-btn"
-          ></button>
+          <button type="button" class="modal__close-btn"></button>
 
           <h2 class="modal__title">Edit Profile</h2>
 
@@ -107,10 +94,7 @@
                 class="modal__input"
                 required
               />
-              <span
-                class="modal__error"
-                id="profile-name-input-error"
-              ></span>
+              <span class="modal__error" id="profile-name-input-error"></span>
             </label>
 
             <label class="modal__label">
@@ -129,12 +113,7 @@
               ></span>
             </label>
 
-            <button
-              type="submit"
-              class="modal__submit-btn"
-            >
-              Save
-            </button>
+            <button type="submit" class="modal__submit-btn">Save</button>
           </form>
         </div>
       </div>
@@ -142,10 +121,7 @@
       <!-- ADD CARD MODAL -->
       <div class="modal" id="add-card-modal">
         <div class="modal__container">
-          <button
-            type="button"
-            class="modal__close-btn"
-          ></button>
+          <button type="button" class="modal__close-btn"></button>
 
           <h2 class="modal__title">New Post</h2>
 
@@ -164,10 +140,7 @@
                 name="link"
                 required
               />
-              <span
-                id="image-link_url-error"
-                class="modal__error"
-              ></span>
+              <span id="image-link_url-error" class="modal__error"></span>
             </label>
 
             <label class="modal__label">
@@ -181,18 +154,10 @@
                 name="name"
                 required
               />
-              <span
-                id="caption_input-error"
-                class="modal__error"
-              ></span>
+              <span id="caption_input-error" class="modal__error"></span>
             </label>
 
-            <button
-              type="submit"
-              class="modal__submit-btn"
-            >
-              Save
-            </button>
+            <button type="submit" class="modal__submit-btn">Save</button>
           </form>
         </div>
       </div>
@@ -200,10 +165,7 @@
       <!-- CARD TEMPLATE -->
       <template id="card-template">
         <li class="card">
-          <button
-            type="button"
-            class="card__delete-button"
-          ></button>
+          <button type="button" class="card__delete-button"></button>
 
           <img class="card__image" src="" alt="" />
 

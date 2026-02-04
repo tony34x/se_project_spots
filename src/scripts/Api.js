@@ -1,6 +1,6 @@
 // utils/Api.js
 
-class Api {
+class Api{
   constructor(options) {
     // constructor body
   }

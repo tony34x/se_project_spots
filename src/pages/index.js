@@ -51,9 +51,12 @@ const api = new Api ({
     "Content-Type": "application/json"
   }
 });
-
+// ---------- RENDER INITIAL CARDS  ----------
 api.getInitialCards()
 .then((cards) => {
+  initialCards.forEach((item) => {
+  cardsList.prepend(getCardElement(item));
+});
   console.log(cards);
 });
 
@@ -126,10 +129,8 @@ function getCardElement(data) {
   return card;
 }
 
-// ---------- RENDER INITIAL CARDS ----------
-initialCards.forEach((item) => {
-  cardsList.prepend(getCardElement(item));
-});
+
+
 
 // ---------- PROFILE FORM ----------
 profileEditButton.addEventListener("click", () => {

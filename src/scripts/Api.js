@@ -17,4 +17,4 @@ class Api {
   // other methods for working with the API
 }
 
-// export the class
+export default Api;

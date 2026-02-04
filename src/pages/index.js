@@ -42,12 +42,17 @@ const initialCards = [
 ];
 
 // ---------- API CLASS ----------
-const api = new Api({
+const api = new Api ({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
     authorization: "def30070-5e81-4326-a060-1e06121bc39e",
     "Content-Type": "application/json"
   }
+});
+
+api.getInitialCards()
+.then((cards) => {
+  console.log(cards);
 });
 
 // ---------- ELEMENTS ----------

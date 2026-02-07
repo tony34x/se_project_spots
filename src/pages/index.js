@@ -9,7 +9,7 @@ import {
   resetValidation,
 } from "../scripts/validate";
 
-import Api from "../scripts/Api";
+import Api from "../utils/Api";
 
 // ---------- INITIAL CARDS ----------
 const initialCards = [

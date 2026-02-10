@@ -1,21 +1,19 @@
-// utils/Api.js
-
-class Api{
-  constructor( baseUrl, headers ) {
+class Api {
+  constructor({ baseUrl, headers }) {
     this._baseUrl = baseUrl;
     this._headers = headers;
   }
 
   getInitialCards() {
-   return fetch(`${this._baseUrl}/cards`, {
-  headers: {
-    authorization: "def30070-5e81-4326-a060-1e06121bc39e"
+    return fetch(`${this._baseUrl}/cards`, {
+      headers: this._headers,
+    }).then((res) => {
+      if (!res.ok) {
+        return Promise.reject(`Error: ${res.status}`);
+      }
+      return res.json();
+    });
   }
-})
-  .then(res => res.json())
-  }
-
-  // other methods for working with the API
 }
 
 export default Api;

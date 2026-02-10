@@ -13,19 +13,19 @@ import Api from "../utils/Api";
 
 // ---------- INITIAL CARDS ----------
 const initialCards = [
-   {
+  {
     name: "Golden Gate Bridge",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
   },
-   {
+  {
     name: "Mountain house",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
-   {
+  {
     name: "Tunnel with morning light",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
   },
-   {
+  {
     name: "a very long bridge, over the forest",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
   },
@@ -44,21 +44,23 @@ const initialCards = [
 ];
 
 // ---------- API CLASS ----------
-const api = new Api ({
+const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
     authorization: "def30070-5e81-4326-a060-1e06121bc39e",
-    "Content-Type": "application/json"
-  }
+    "Content-Type": "application/json",
+  },
 });
 // ---------- RENDER INITIAL CARDS  ----------
-api.getInitialCards()
-.then((cards) => {
-  initialCards.forEach((item) => {
-  cardsList.prepend(getCardElement(item));
-});
-  console.log(cards);
-});
+api
+  .getInitialCards()
+  .then((cards) => {
+    cards.forEach((item) => {
+      const cardElement = getCardElement(item);
+      cardsList.append(cardElement);
+    });
+  })
+  .catch(console.error);
 
 // ---------- ELEMENTS ----------
 const cardsList = document.querySelector(".cards__list");
@@ -129,9 +131,6 @@ function getCardElement(data) {
   return card;
 }
 
-
-
-
 // ---------- PROFILE FORM ----------
 profileEditButton.addEventListener("click", () => {
   nameInput.value = profileName.textContent;
@@ -140,7 +139,7 @@ profileEditButton.addEventListener("click", () => {
   resetValidation(
     profileEditForm,
     [nameInput, descriptionInput],
-    validationconfig
+    validationconfig,
   );
 
   openModal(profileEditModal);
@@ -154,11 +153,9 @@ profileEditForm.addEventListener("submit", (evt) => {
 });
 
 // ---------- ADD CARD FORM ----------
-document
-  .querySelector(".profile__add-button")
-  .addEventListener("click", () => {
-    openModal(addCardModal);
-  });
+document.querySelector(".profile__add-button").addEventListener("click", () => {
+  openModal(addCardModal);
+});
 
 addCardForm.addEventListener("submit", (evt) => {
   evt.preventDefault();

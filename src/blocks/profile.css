@@ -18,6 +18,7 @@
 
 .profile__avatar-button::after {
   content: "Edit Avatar";
+  
 }
 
 .profile__name {

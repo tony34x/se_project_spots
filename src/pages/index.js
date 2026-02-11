@@ -52,9 +52,11 @@ const api = new Api({
   },
 });
 // ---------- RENDER INITIAL CARDS  ----------
+
 api
-  .getInitialCards()
+  .getAppInfo()
   .then((cards) => {
+    console.log(cards);
     cards.forEach((item) => {
       const cardElement = getCardElement(item);
       cardsList.append(cardElement);
@@ -76,10 +78,11 @@ const profileDescription = document.querySelector(".profile__description");
 
 const addCardModal = document.querySelector("#add-card-modal");
 const addCardForm = document.querySelector("#new_post-add-card");
-
+const modals = document.querySelectorAll(".modal");
 const previewModal = document.querySelector("#preview-modal");
 const previewImage = previewModal.querySelector(".modal__image");
 const previewCaption = previewModal.querySelector(".modal__caption");
+const closeButtons = document.querySelectorAll(".modal__close-btn");
 
 // ---------- MODAL HELPERS ----------
 function handleEscape(evt) {
@@ -150,6 +153,7 @@ profileEditForm.addEventListener("submit", (evt) => {
   profileName.textContent = nameInput.value;
   profileDescription.textContent = descriptionInput.value;
   closeModal(profileEditModal);
+  console.log(profileEditModal);
 });
 
 // ---------- ADD CARD FORM ----------
@@ -172,6 +176,20 @@ addCardForm.addEventListener("submit", (evt) => {
 
   closeModal(addCardModal);
 });
+
+closeButtons.forEach((button) => {
+  const modal = button.closest(".modal");
+  button.addEventListener("click", () => closeModal(modal));
+});
+
+modals.forEach((modal) => {
+  modal.addEventListener("mousedown", (evt) => {
+    if (evt.target === modal) {
+      closeModal(modal);
+    }
+  });
+});
+
 
 // ---------- ENABLE VALIDATION ----------
 enableValidation(validationconfig);

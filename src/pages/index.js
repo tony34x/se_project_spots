@@ -70,12 +70,10 @@ const cardsList = document.querySelector(".cards__list");
 const profileEditButton = document.querySelector(".profile__edit-button");
 const profileEditModal = document.querySelector("#edit-profile-modal");
 const profileEditForm = document.querySelector("#edit-profile-form");
-
 const nameInput = document.querySelector("#profile-name-input");
 const descriptionInput = document.querySelector("#profile-description-input");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
-
 const addCardModal = document.querySelector("#add-card-modal");
 const addCardForm = document.querySelector("#new_post-add-card");
 const modals = document.querySelectorAll(".modal");
@@ -189,7 +187,6 @@ modals.forEach((modal) => {
     }
   });
 });
-
 
 // ---------- ENABLE VALIDATION ----------
 enableValidation(validationconfig);

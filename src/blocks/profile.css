@@ -16,8 +16,22 @@
   flex-direction: column;
 }
 
-profile__avatar-container {
+.profile__avatar-container {
   position: relative;
+}
+
+.profile__avatar-button {
+  position:absolute;
+}
+
+.profile__avatar-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: last baseline;
+  align-self:;
+  
 }
 
 .profile__avatar-button::after {

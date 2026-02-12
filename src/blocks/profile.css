@@ -16,9 +16,12 @@
   flex-direction: column;
 }
 
+profile__avatar-container {
+  position: relative;
+}
+
 .profile__avatar-button::after {
   content: "Edit Avatar";
-  
 }
 
 .profile__name {

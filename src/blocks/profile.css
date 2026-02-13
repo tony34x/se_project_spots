@@ -22,6 +22,11 @@
 
 .profile__avatar-button {
   position:absolute;
+  background-color: transparent;
+  border: none;
+  color: white;
+  display: flex;
+
 }
 
 .profile__avatar-container {
@@ -30,7 +35,7 @@
   align-items: center;
   justify-content: center;
   align-items: last baseline;
-  
+
 }
 
 .profile__avatar-button::after {

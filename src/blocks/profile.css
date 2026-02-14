@@ -30,7 +30,7 @@
   font-size: 16px;
   line-height: 1;
   visibility: hidden;
-  
+
 }
 
 .profile__avatar-container {
@@ -130,7 +130,7 @@
 }
 
  /* Todo - set content of ::after element To ""/
- /* TOdo - set finish  mobile */
+ /* TOdo - set finish  mobile avatar button styles */
 
 
 .profile__add-button::before {

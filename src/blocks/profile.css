@@ -30,11 +30,12 @@
   font-size: 16px;
   line-height: 1;
   visibility: hidden;
-
+   gap: 8px;
 }
 
 .profile__avatar-container {
   position: relative;
+  
 }
 .profile__avatar-container:hover .profile__avatar-button {
   visibility: visible;
@@ -46,7 +47,6 @@
 
 .profile__pencil-icon {
   color: #ffffff;
-
 }
 
 .profile__name {
@@ -133,7 +133,7 @@
   font-family: Poppins, Arial, Helvetica, sans-serif;
   padding: 18px 32px 18px 32px;
 }
- /* Todo - set content of ::after element To ""/
+/* Todo - set content of ::after element To ""/
  /* TOdo - set finish  mobile avatar button styles */
 
 .profile__add-button::before {

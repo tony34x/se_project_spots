@@ -39,10 +39,12 @@
 }
 .profile__avatar-container:hover .profile__avatar-button {
   visibility: visible;
+  
 }
 
 .profile__avatar-button::after {
   content: "Edit Avatar";
+  
 }
 
 .profile__pencil-icon {

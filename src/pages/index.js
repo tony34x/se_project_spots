@@ -66,7 +66,6 @@ api
 
 // ---------- ELEMENTS ----------
 const cardsList = document.querySelector(".cards__list");
-
 const profileEditButton = document.querySelector(".profile__edit-button");
 const profileEditModal = document.querySelector("#edit-profile-modal");
 const profileEditForm = document.querySelector("#edit-profile-form");
@@ -81,6 +80,10 @@ const previewModal = document.querySelector("#preview-modal");
 const previewImage = previewModal.querySelector(".modal__image");
 const previewCaption = previewModal.querySelector(".modal__caption");
 const closeButtons = document.querySelectorAll(".modal__close-btn");
+const avatarModal = document.querySelector("#avatar-modal");
+const avatarForm = avatarModal.querySelector("#edit-avatar-form");
+const avatarSubmitButton = avatarModal.querySelector("#profile__avatar-input");
+const profileAvatar = avatarModal.querySelector(".profile__avatar");
 
 // ---------- MODAL HELPERS ----------
 function handleEscape(evt) {

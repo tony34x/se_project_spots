@@ -83,7 +83,9 @@ const closeButtons = document.querySelectorAll(".modal__close-btn");
 const avatarModal = document.querySelector("#avatar-modal");
 const avatarForm = avatarModal.querySelector("#edit-avatar-form");
 const avatarSubmitButton = avatarModal.querySelector("#profile__avatar-input");
-const profileAvatar = avatarModal.querySelector(".profile__avatar");
+const AvatarInput = avatarModal.querySelector(".profile__avatar");
+const avatarModalCloseButton = document.querySelector(".profile__avatar-edit-button");
+const avatarModalbutton = document.querySelector(".profile__avatar-edit-button");
 
 // ---------- MODAL HELPERS ----------
 function handleEscape(evt) {
@@ -147,6 +149,11 @@ profileEditButton.addEventListener("click", () => {
   );
 
   openModal(profileEditModal);
+});
+// TODO select modal button at top of the page
+// to secect avatar modal
+avatarModalbutton.addEventListener("click", () => {
+  openModal(avatarModal);
 });
 
 profileEditForm.addEventListener("submit", (evt) => {

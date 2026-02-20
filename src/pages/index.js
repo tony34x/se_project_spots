@@ -81,11 +81,9 @@ const previewImage = previewModal.querySelector(".modal__image");
 const previewCaption = previewModal.querySelector(".modal__caption");
 const closeButtons = document.querySelectorAll(".modal__close-btn");
 const avatarModal = document.querySelector("#avatar-modal");
-const avatarForm = avatarModal.querySelector("#edit-avatar-form");
-const avatarSubmitButton = avatarModal.querySelector("#profile__avatar-input");
-const AvatarInput = avatarModal.querySelector(".profile__avatar");
-const avatarModalCloseButton = document.querySelector(".profile__avatar-edit-button");
-const avatarModalbutton = document.querySelector(".profile__avatar-edit-button");
+const avatarForm = avatarModal.querySelector(".modal__form");
+const avatarInput = avatarModal.querySelector("#profile__avatar-input");
+const avatarModalbutton = document.querySelector(".profile__avatar-button");
 
 // ---------- MODAL HELPERS ----------
 function handleEscape(evt) {
@@ -105,11 +103,26 @@ function closeModal(modal) {
   document.removeEventListener("keyup", handleEscape);
 }
 
+// TODO - Finish avatar submission handler
+function handleavatarSubmit(evt) {
+  evt.preventDefault();
+  console.log(avatarInput.value);
+  closeModal(avatarModal);
+  // ToDO - add API call to update avatar
+  // api
+  // .getAppInfo()
+  // .then((cards) => {
+  //   console.log(cards);
+  //   cards.forEach((item) => {
+  //     const cardElement = getCardElement(item);
+  //     cardsList.append(cardElement);
+  //   });
+  // })
+}
 // ---------- CARD ----------
 function getCardElement(data) {
   const template = document.querySelector("#card-template").content;
   const card = template.querySelector(".card").cloneNode(true);
-
   const image = card.querySelector(".card__image");
   const title = card.querySelector(".card__title");
   const likeButton = card.querySelector(".card__like-button");
@@ -169,6 +182,7 @@ document.querySelector(".profile__add-button").addEventListener("click", () => {
   openModal(addCardModal);
 });
 
+
 addCardForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
 
@@ -184,6 +198,8 @@ addCardForm.addEventListener("submit", (evt) => {
 
   closeModal(addCardModal);
 });
+
+avatarForm.addEventListener("submit", handleavatarSubmit);
 
 closeButtons.forEach((button) => {
   const modal = button.closest(".modal");

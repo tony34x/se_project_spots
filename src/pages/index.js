@@ -73,6 +73,7 @@ const nameInput = document.querySelector("#profile-name-input");
 const descriptionInput = document.querySelector("#profile-description-input");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
+const profileAvatar = document.querySelector(".profile__avatar");
 const addCardModal = document.querySelector("#add-card-modal");
 const addCardForm = document.querySelector("#new_post-add-card");
 const modals = document.querySelectorAll(".modal");
@@ -106,8 +107,14 @@ function closeModal(modal) {
 // TODO - Finish avatar submission handler
 function handleavatarSubmit(evt) {
   evt.preventDefault();
-  console.log(avatarInput.value);
-  closeModal(avatarModal);
+  api
+    .editAvatarInfo({ avatar: avatarInput.value })
+    .then((data) => {
+      profileAvatar.src = data?.avatar || avatarInput.value;
+      closeModal(avatarModal);
+    })
+    .catch(console.error);
+}
   // ToDO - add API call to update avatar
   // api
   // .getAppInfo()
@@ -118,7 +125,7 @@ function handleavatarSubmit(evt) {
   //     cardsList.append(cardElement);
   //   });
   // })
-}
+// }
 // ---------- CARD ----------
 function getCardElement(data) {
   const template = document.querySelector("#card-template").content;

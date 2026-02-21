@@ -90,6 +90,18 @@
   /* width: 97px;
   height: 16px; */
 }
+.modal__submit-btn-delete {
+  width: 156px;
+  padding: 18px 0;
+  background-color: #ff3333;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: #212121;
+  border-radius: 8px;
+  cursor: pointer;
+}
 
 .profile__edit-button {
   margin-top: auto;

@@ -27,8 +27,8 @@
   letter-spacing: 0%;
   
 }
-.modal__form_type_delete,
-.modal__form_type_delet {
+
+.modal__form_type_delete {
   width: 332px;
   height: 52px;
   gap: 20px;
@@ -91,6 +91,15 @@
   top: -52.5px;
   right: 0;
   background-image: url(../images/xouticon.svg);
+}
+
+/* .modal__submit-btn-cancel {
+  
+} */
+
+.modal__submit-btn.modal__submit-btn-delete {
+  background-color: #ff3333;
+  color:#212121;
 }
 
 .modal__close-btn:hover {

@@ -85,6 +85,9 @@ const avatarModal = document.querySelector("#avatar-modal");
 const avatarForm = avatarModal.querySelector(".modal__form");
 const avatarInput = avatarModal.querySelector("#profile__avatar-input");
 const avatarModalbutton = document.querySelector(".profile__avatar-button");
+const modalDeletebutton = document.querySelector(".modal__submit-btn-delete");
+const modalCancelbutton = document.querySelector(".modal__submit-btn-cancel");
+
 
 // ---------- MODAL HELPERS ----------
 function handleEscape(evt) {
@@ -161,6 +164,14 @@ function getCardElement(data) {
 profileEditButton.addEventListener("click", () => {
   nameInput.value = profileName.textContent;
   descriptionInput.value = profileDescription.textContent;
+
+  modalDeletebutton.addEventListener("click", () => {
+    card.remove();
+  });
+
+  modalCancelbutton.addEventListener("click", () => {
+    closeModal(profileEditModal);
+  });
 
   resetValidation(
     profileEditForm,

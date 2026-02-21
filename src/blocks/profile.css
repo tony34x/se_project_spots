@@ -101,6 +101,11 @@
   color: #212121;
   border-radius: 8px;
   cursor: pointer;
+
+}
+
+.modal__submit-btn-delete:hover {
+  opacity: 50%;
 }
 
 .profile__edit-button {

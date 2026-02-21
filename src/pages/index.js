@@ -85,8 +85,10 @@ const avatarModal = document.querySelector("#avatar-modal");
 const avatarForm = avatarModal.querySelector(".modal__form");
 const avatarInput = avatarModal.querySelector("#profile__avatar-input");
 const avatarModalbutton = document.querySelector(".profile__avatar-button");
-const modalDeletebutton = document.querySelector(".modal__submit-btn-delete");
-const modalCancelbutton = document.querySelector(".modal__submit-btn-cancel");
+const deleteModal = document.querySelector("#delete-modal");
+const deleteForm = deleteModal.querySelector(".modal__form");
+const modalCancelbutton = document.querySelector("#cancel-delete-btn");
+let selectedCard = null;
 
 
 // ---------- MODAL HELPERS ----------
@@ -147,7 +149,7 @@ function getCardElement(data) {
   });
 
   deleteButton.addEventListener("click", () => {
-    card.remove();
+    handleDeleteCard({ target: deleteButton });
   });
 
   image.addEventListener("click", () => {
@@ -160,18 +162,15 @@ function getCardElement(data) {
   return card;
 }
 
+function handleDeleteCard(evt) {
+  selectedCard = evt.target.closest(".card");
+  openModal(deleteModal);
+}
+
 // ---------- PROFILE FORM ----------
 profileEditButton.addEventListener("click", () => {
   nameInput.value = profileName.textContent;
   descriptionInput.value = profileDescription.textContent;
-
-  modalDeletebutton.addEventListener("click", () => {
-    card.remove();
-  });
-
-  modalCancelbutton.addEventListener("click", () => {
-    closeModal(profileEditModal);
-  });
 
   resetValidation(
     profileEditForm,
@@ -218,6 +217,20 @@ addCardForm.addEventListener("submit", (evt) => {
 });
 
 avatarForm.addEventListener("submit", handleavatarSubmit);
+
+deleteForm.addEventListener("submit", (evt) => {
+  evt.preventDefault();
+  if (selectedCard) {
+    selectedCard.remove();
+    selectedCard = null;
+  }
+  closeModal(deleteModal);
+});
+
+modalCancelbutton.addEventListener("click", () => {
+  selectedCard = null;
+  closeModal(deleteModal);
+});
 
 closeButtons.forEach((button) => {
   const modal = button.closest(".modal");

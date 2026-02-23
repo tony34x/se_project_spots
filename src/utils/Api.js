@@ -39,7 +39,28 @@ class Api {
       body: JSON.stringify({
         avatar,
       }),
-    }).then(this._checkResponse);
+    }).then((res) => {
+      if (!res.ok) {
+        return res.json().then((errorData) => {
+          return Promise.reject(`Error: ${res.status} - ${errorData.message}`);
+        });
+      }
+    });
+  }
+  deletecard({  }) {
+    return fetch(`${this._baseUrl}/users/me/avatar`, {
+      method: "PATCH",
+      headers: this._headers,
+      body: JSON.stringify({
+        avatar,
+      }),
+    }).then((res) => {
+      if (!res.ok) {
+        return res.json().then((errorData) => {
+          return Promise.reject(`Error: ${res.status} - ${errorData.message}`);
+        });
+      }
+    });
   }
 }
 

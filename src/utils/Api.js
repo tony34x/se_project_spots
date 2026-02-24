@@ -47,13 +47,10 @@ class Api {
       }
     });
   }
-  deletecard({  }) {
-    return fetch(`${this._baseUrl}/users/me/avatar`, {
-      method: "PATCH",
+  deletecard({ id}) {
+    return fetch(`${this._baseUrl}/cards/${id}`, {
+      method: "DELETE",
       headers: this._headers,
-      body: JSON.stringify({
-        avatar,
-      }),
     }).then((res) => {
       if (!res.ok) {
         return res.json().then((errorData) => {

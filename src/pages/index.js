@@ -90,7 +90,6 @@ const deleteForm = deleteModal.querySelector(".modal__form");
 const modalCancelbutton = document.querySelector("#cancel-delete-btn");
 let selectedCard = null;
 
-
 // ---------- MODAL HELPERS ----------
 function handleEscape(evt) {
   if (evt.key === "Escape") {
@@ -120,16 +119,16 @@ function handleavatarSubmit(evt) {
     })
     .catch(console.error);
 }
-  // ToDO - add API call to update avatar
-  // api
-  // .getAppInfo()
-  // .then((cards) => {
-  //   console.log(cards);
-  //   cards.forEach((item) => {
-  //     const cardElement = getCardElement(item);
-  //     cardsList.append(cardElement);
-  //   });
-  // })
+// ToDO - add API call to update avatar
+// api
+// .getAppInfo()
+// .then((cards) => {
+//   console.log(cards);
+//   cards.forEach((item) => {
+//     const cardElement = getCardElement(item);
+//     cardsList.append(cardElement);
+//   });
+// })
 // }
 // ---------- CARD ----------
 function getCardElement(data) {
@@ -139,6 +138,7 @@ function getCardElement(data) {
   const title = card.querySelector(".card__title");
   const likeButton = card.querySelector(".card__like-button");
   const deleteButton = card.querySelector(".card__delete-button");
+  const deleteForm = deleteModal.querySelector(".modal__form");
 
   image.src = data.link;
   image.alt = data.name;
@@ -148,8 +148,8 @@ function getCardElement(data) {
     likeButton.classList.toggle("card__like-button_active");
   });
 
-  deleteButton.addEventListener("click", () => {
-    handleDeleteCard({ target: deleteButton });
+  deleteButton.addEventListener("click", (evt) => {
+    handleDeleteCard(evt, data._id);
   });
 
   image.addEventListener("click", () => {
@@ -162,8 +162,9 @@ function getCardElement(data) {
   return card;
 }
 
-function handleDeleteCard(evt) {
+function handleDeleteCard(evt, cardId) {
   selectedCard = evt.target.closest(".card");
+  console.log(cardId);
   openModal(deleteModal);
 }
 
@@ -186,6 +187,7 @@ avatarModalbutton.addEventListener("click", () => {
   openModal(avatarModal);
 });
 
+
 profileEditForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
@@ -198,7 +200,6 @@ profileEditForm.addEventListener("submit", (evt) => {
 document.querySelector(".profile__add-button").addEventListener("click", () => {
   openModal(addCardModal);
 });
-
 
 addCardForm.addEventListener("submit", (evt) => {
   evt.preventDefault();

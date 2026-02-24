@@ -60,6 +60,7 @@ class Api {
     });
   }
     addLike({ id, isLiked }) {
+      const method = isLiked ? "DELETE" : "PUT";
     return fetch(`${this._baseUrl}/cards/${id}/likes`, {
       method: "PUT",
       headers: this._headers,

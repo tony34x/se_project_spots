@@ -109,8 +109,13 @@ function closeModal(modal) {
 }
 
 // TODO - Finish avatar submission handler
+// change text content to Saving..
 function handleavatarSubmit(evt) {
   evt.preventDefault();
+
+const submitButton = evt.submitter
+console.log(submitButton)
+
   api
     .editAvatarInfo({ avatar: avatarInput.value })
     .then((data) => {
@@ -118,6 +123,10 @@ function handleavatarSubmit(evt) {
       closeModal(avatarModal);
     })
     .catch(console.error);
+    //  .finally(() => {
+    // //  change text content back to "save"
+    // });
+
 }
 // ToDO - add API call to update avatar
 // api
@@ -144,9 +153,10 @@ function getCardElement(data) {
   image.alt = data.name;
   title.textContent = data.name;
 
-  likeButton.addEventListener("click", () => {
+  likeButton.addEventListener("click", (evt) => handleLike(evt, data._id));
+  {
     likeButton.classList.toggle("card__like-button_active");
-  });
+  }
 
   deleteButton.addEventListener("click", (evt) => {
     handleDeleteCard(evt, data._id);
@@ -162,6 +172,16 @@ function getCardElement(data) {
   return card;
 }
 
+function handleLike(evt, cardId) {
+  evt.target.classList.toggle("card__like-button_active");
+  // 1. Check whether the card is currently liked or not
+  //  const isLiked = ???;
+  // 2. call the changeLikeStatus method, passing it the appropriate arguments
+  // 3. handle the responese (.then and .catch)
+  // 4.in the .then, togggle active class
+}
+
+// TODO - if the card is liked, set the active class on the card
 function handleDeleteCard(evt, cardId) {
   selectedCard = evt.target.closest(".card");
   console.log(cardId);
@@ -186,7 +206,6 @@ profileEditButton.addEventListener("click", () => {
 avatarModalbutton.addEventListener("click", () => {
   openModal(avatarModal);
 });
-
 
 profileEditForm.addEventListener("submit", (evt) => {
   evt.preventDefault();

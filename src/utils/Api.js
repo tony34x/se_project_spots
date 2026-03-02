@@ -47,7 +47,7 @@ class Api {
       }
     });
   }
-  deletecard({ id}) {
+  deletecard({ id }) {
     return fetch(`${this._baseUrl}/cards/${id}`, {
       method: "DELETE",
       headers: this._headers,
@@ -59,22 +59,9 @@ class Api {
       }
     });
   }
-    addLike({ id, isLiked }) {
-      const method = isLiked ? "DELETE" : "PUT";
+  changeLikeStatus({ id, isLiked }) {
     return fetch(`${this._baseUrl}/cards/${id}/likes`, {
-      method: "PUT",
-      headers: this._headers,
-    }).then((res) => {
-      if (!res.ok) {
-        return res.json().then((errorData) => {
-          return Promise.reject(`Error: ${res.status} - ${errorData.message}`);
-        });
-      }
-    });
-  }
-   removeLike({ id}) {
-    return fetch(`${this._baseUrl}/cards/${id}/likes`, {
-      method: "DELETE",
+      method: isLiked ? "DELETE" : "PUT",
       headers: this._headers,
     }).then((res) => {
       if (!res.ok) {

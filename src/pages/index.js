@@ -1,6 +1,8 @@
 // CSS (webpack handles this)
 import "./index.css";
 
+import { setbuttonText } from "../utils/helpers";
+
 // Validation
 import {
   enableValidation,
@@ -56,7 +58,9 @@ const likedCardsStorageKey = "liked-card-ids";
 
 function getStoredLikedCardIds() {
   try {
-    const parsed = JSON.parse(localStorage.getItem(likedCardsStorageKey) || "[]");
+    const parsed = JSON.parse(
+      localStorage.getItem(likedCardsStorageKey) || "[]",
+    );
     return new Set(Array.isArray(parsed) ? parsed : []);
   } catch {
     return new Set();
@@ -129,6 +133,7 @@ const deleteModal = document.querySelector("#delete-modal");
 const deleteForm = deleteModal.querySelector(".modal__form");
 const modalCancelbutton = document.querySelector("#cancel-delete-btn");
 let selectedCard = null;
+let selectedCardId = null;
 
 // ---------- MODAL HELPERS ----------
 function handleEscape(evt) {
@@ -147,7 +152,7 @@ function closeModal(modal) {
   modal.classList.remove("modal_opened");
   document.removeEventListener("keyup", handleEscape);
 }
-
+// TODO - implement loading text for all other form submissions
 // TODO - Finish avatar submission handler
 
 function handleavatarSubmit(evt) {
@@ -158,8 +163,6 @@ function handleavatarSubmit(evt) {
   if (modalsubmitbtn) {
     modalsubmitbtn.textContent = "Saving...";
   }
-
-
   api
     .editAvatarInfo({ avatar: avatarInput.value })
     .then((data) => {
@@ -239,7 +242,7 @@ function handleLike(evt, cardId) {
 // TODO - if the card is liked, set the active class on the card
 function handleDeleteCard(evt, cardId) {
   selectedCard = evt.target.closest(".card");
-  console.log(cardId);
+  selectedCardId = cardId;
   openModal(deleteModal);
 }
 
@@ -330,15 +333,36 @@ avatarForm.addEventListener("submit", handleavatarSubmit);
 
 deleteForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
-  if (selectedCard) {
-    selectedCard.remove();
-    selectedCard = null;
+  if (!selectedCard || !selectedCardId) return;
+
+  const deleteSubmitBtn = deleteForm.querySelector('button[type="submit"]');
+  const initialText = deleteSubmitBtn ? deleteSubmitBtn.textContent : "Delete";
+
+  if (deleteSubmitBtn) {
+    deleteSubmitBtn.textContent = "Deleting...";
+    deleteSubmitBtn.disabled = true;
   }
-  closeModal(deleteModal);
+
+  api
+    .deletecard({ id: selectedCardId })
+    .then(() => {
+      selectedCard.remove();
+      selectedCard = null;
+      selectedCardId = null;
+      closeModal(deleteModal);
+    })
+    .catch(console.error)
+    .finally(() => {
+      if (deleteSubmitBtn) {
+        deleteSubmitBtn.textContent = initialText;
+        deleteSubmitBtn.disabled = false;
+      }
+    });
 });
 
 modalCancelbutton.addEventListener("click", () => {
   selectedCard = null;
+  selectedCardId = null;
   closeModal(deleteModal);
 });
 

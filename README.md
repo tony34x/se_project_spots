@@ -20,6 +20,7 @@ CSS Grid: Used for creating a responsive and adaptable layout.
 Card Design: show the images of pictures.
 
 ## Screenshot / Demo GIF
+video: https://drive.google.com/file/d/13_0zgu2w2NGjgztBgSkmJ9RKxirqZaFX/view?usp=sharing
 ![ screenshots spot ](images/127.0.0.1_5501_index.html.png)
 ![ screenshots spot 2](images/Screenshot_8-1-2025_19147_127.0.0.1.jpeg)
 

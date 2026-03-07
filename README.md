@@ -19,8 +19,25 @@ CSS: For styling the application and enhancing the visual design.
 CSS Grid: Used for creating a responsive and adaptable layout.
 Card Design: show the images of pictures.
 
+## Screenshot / Demo GIF
 ![ screenshots spot ](images/127.0.0.1_5501_index.html.png)
 ![ screenshots spot 2](images/Screenshot_8-1-2025_19147_127.0.0.1.jpeg)
+
+**Live Demo**: https://userprofilemanager2.netlify.app (or https://tony34x.github.io/se_project_spots/)
+
+## Screenshot / Demo GIF
+! Record editing profile or adding post -->
+
+## Setup Instructions
+1. Clone repo
+2. Open index.html or run build if Webpack needed
+
+## Challenges & Learning
+- Dynamic profile editing with JS
+- Grid/card layout for posts
+- Form handling for edits/adds
+
+Still in progress — adding more interactivity/polish.
 
 
  [deployed project:]

@@ -4,14 +4,12 @@
   position: relative;
 }
 
-
 .card__image {
   max-width: 413px;
   height: 413px;
   object-fit: cover;
   border-radius: 8px;
   display: block;
-
 }
 
 .card__image:hover {
@@ -53,15 +51,12 @@
   background-image: url(../images/likeheart2.svg);
   opacity: 1;
   background-repeat: no-repeat;
-
 }
 
 .card__like-button_active:hover {
   opacity: 0.4;
   cursor: pointer;
-
 }
-
 
 .card__like-button:hover {
   opacity: 50%;
@@ -89,7 +84,6 @@
   justify-content: space-between;
   align-items: center;
   margin: 10px;
-
 }
 
 @media screen and (max-width: 680px) {
@@ -109,28 +103,25 @@
     max-width: 235px;
   }
 
-.card__like-button {
-  background-image: url(../images/LikeIcon.svg);
-  width: 23px;
-  height: 20px;
-  border: none;
-  background-color: transparent;
-  opacity: 40%;
-  background-repeat: no-repeat;
-  top: 425px;
-}
+  .card__like-button {
+    background-image: url(../images/LikeIcon.svg);
+    width: 23px;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+    opacity: 40%;
+    background-repeat: no-repeat;
+    top: 425px;
+  }
 
-.card__like-button_active {
-  background-image: url(../images/likeheart2.svg);
-  opacity: 1;
-  background-repeat: no-repeat;
+  .card__like-button_active {
+    background-image: url(../images/likeheart2.svg);
+    opacity: 1;
+    background-repeat: no-repeat;
+  }
 
-}
-
-.card__like-button_active:hover {
-  opacity: 0.4;
-  cursor: pointer;
-
-}
-
+  .card__like-button_active:hover {
+    opacity: 0.4;
+    cursor: pointer;
+  }
 }

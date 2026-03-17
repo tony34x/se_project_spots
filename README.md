@@ -21,8 +21,6 @@ Card Design: show the images of pictures.
 
 ## Screenshot / Demo GIF
 video: https://drive.google.com/file/d/13_0zgu2w2NGjgztBgSkmJ9RKxirqZaFX/view?usp=sharing
-![ screenshots spot ](images/127.0.0.1_5501_index.html.png)
-![ screenshots spot 2](images/Screenshot_8-1-2025_19147_127.0.0.1.jpeg)
 
 **Live Demo**: https://userprofilemanager2.netlify.app (or https://tony34x.github.io/se_project_spots/)
 

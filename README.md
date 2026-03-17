@@ -38,7 +38,10 @@ video: https://drive.google.com/file/d/13_0zgu2w2NGjgztBgSkmJ9RKxirqZaFX/view?us
 - Grid/card layout for posts
 - Form handling for edits/adds
 
-Still in progress — adding more interactivity/polish.
+ ## Project Pitch Video
+ 
+ Check out [this video](https://drive.google.com/file/d/1f0lB7WEeYaEOMbIBpuQp4MMZ0eE-nGPg/view?usp=sharing), where I describe my 
+ project and some challenges I faced while building it.
 
 
  [deployed project:]

@@ -2,48 +2,16 @@
 import "./index.css";
 
 import { setbuttonText } from "../utils/helpers";
+import { validationconfig } from "../utils/constants";
 
 // Validation
 import {
   enableValidation,
-  validationconfig,
   toggleButtonState,
   resetValidation,
 } from "../scripts/validate";
 
 import Api from "../utils/Api";
-
-// ---------- INITIAL CARDS ----------
-const initialCards = [
-  {
-    name: "Golden Gate Bridge",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
-  },
-  {
-    name: "Mountain house",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
-  },
-  {
-    name: "Tunnel with morning light",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
-  },
-  {
-    name: "a very long bridge, over the forest",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
-  },
-  {
-    name: "an outdoor cafe",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
-  },
-  {
-    name: "Restaurant terrace",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
-  },
-  {
-    name: "Val Thorens",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
-  },
-];
 
 // ---------- API CLASS ----------
 const api = new Api({
@@ -119,18 +87,18 @@ const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 const profileAvatar = document.querySelector(".profile__avatar");
 const addCardModal = document.querySelector("#add-card-modal");
-const addCardForm = document.querySelector("#new_post-add-card");
+const addCardForm = document.querySelector("#add-card-form");
+const editAvatarForm = document.querySelector("#edit-avatar-form");
 const modals = document.querySelectorAll(".modal");
 const previewModal = document.querySelector("#preview-modal");
 const previewImage = previewModal.querySelector(".modal__image");
 const previewCaption = previewModal.querySelector(".modal__caption");
 const closeButtons = document.querySelectorAll(".modal__close-btn");
 const avatarModal = document.querySelector("#avatar-modal");
-const avatarForm = avatarModal.querySelector(".modal__form");
 const avatarInput = avatarModal.querySelector("#profile__avatar-input");
 const avatarModalbutton = document.querySelector(".profile__avatar-button");
 const deleteModal = document.querySelector("#delete-modal");
-const deleteForm = deleteModal.querySelector(".modal__form");
+const deleteForm = document.querySelector("#delete-confirm-form");
 const modalCancelbutton = document.querySelector("#cancel-delete-btn");
 let selectedCard = null;
 let selectedCardId = null;
@@ -176,17 +144,6 @@ function handleavatarSubmit(evt) {
       }
     });
 }
-// ToDO - add API call to update avatar
-// api
-// .getAppInfo()
-// .then((cards) => {
-//   console.log(cards);
-//   cards.forEach((item) => {
-//     const cardElement = getCardElement(item);
-//     cardsList.append(cardElement);
-//   });
-// })
-// }
 // ---------- CARD ----------
 function getCardElement(data) {
   const template = document.querySelector("#card-template").content;
@@ -329,7 +286,8 @@ addCardForm.addEventListener("submit", (evt) => {
     });
 });
 
-avatarForm.addEventListener("submit", handleavatarSubmit);
+editAvatarForm.addEventListener("submit", handleavatarSubmit);
+
 
 deleteForm.addEventListener("submit", (evt) => {
   evt.preventDefault();

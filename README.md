@@ -1,27 +1,28 @@
-## Project Name: Project Spot ##
+## Project Name: Project Spot
 
-Description:
-Project Spot is a web-site designed to provide a clean and user-friendly interface for users to manage and update their profiles. The project includes essential features like an editable profile section, options to add new posts, and a well-structured layout for displaying content effectively.
+### Description
+Project Spot is a website that lets users manage a profile, update an avatar, and create, like, preview, and delete image cards. The interface is bundled with Webpack and connected to a remote API so profile data and cards are loaded from the server.
 
-Functionality:
+### Functionality
+- Edit profile information in a modal form
+- Update the profile avatar
+- Add new cards with an image link and caption
+- Like and delete cards
+- Preview card images in a dedicated modal
+- Validate modal forms on the client side
 
-Header and Footer: Provides navigation and branding consistency across pages.
-Content Body: Displays user profiles and posts.
-Edit Profile Button: Allows users to edit their profile details through an intuitive interface.
-Add Profile Button: Enables users to create new profiles or posts.
-Grid and Card Layouts: Utilized to present information in a structured and visually appealing manner.
-Technologies Used:
+### Technologies Used
+- HTML
+- CSS
+- JavaScript
+- Webpack
+- Fetch API / REST API integration
+- Responsive layout with CSS Grid and Flexbox
 
-HTML: For structuring the content of the web pages.
-CSS: For styling the application and enhancing the visual design.
+### Screenshots
+![screenshots spot](images/127.0.0.1_5501_index.html.png)
+![screenshots spot 2](images/Screenshot_8-1-2025_19147_127.0.0.1.jpeg)
 
-
-CSS Grid: Used for creating a responsive and adaptable layout.
-Card Design: show the images of pictures.
-
-![ screenshots spot ](images/127.0.0.1_5501_index.html.png)
-![ screenshots spot 2](images/Screenshot_8-1-2025_19147_127.0.0.1.jpeg)
-
-
- [deployed project:]
-https://tony34x.github.io/se_project_spots/
+### Links
+- Deployed project: https://tony34x.github.io/se_project_spots/
+- Video walkthrough: add your video link here

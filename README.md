@@ -23,9 +23,7 @@ Card Design: show the images of pictures.
 video: https://drive.google.com/file/d/13_0zgu2w2NGjgztBgSkmJ9RKxirqZaFX/view?usp=sharing
 
 **Live Demo**: https://userprofilemanager2.netlify.app (or https://tony34x.github.io/se_project_spots/)
-
-## Screenshot / Demo GIF
-! Record editing profile or adding post -->
+!
 
 ## Setup Instructions
 1. Clone repo

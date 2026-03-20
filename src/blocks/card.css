@@ -42,15 +42,16 @@
   height: 20px;
   border: none;
   background-color: transparent;
-  opacity: 40%;
+  opacity: 0.4;
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   top: 425px;
 }
 
 .card__like-button_active {
   background-image: url(../images/likeheart2.svg);
   opacity: 1;
-  background-repeat: no-repeat;
 }
 
 .card__like-button_active:hover {
@@ -104,20 +105,11 @@
   }
 
   .card__like-button {
-    background-image: url(../images/LikeIcon.svg);
-    width: 23px;
-    height: 20px;
-    border: none;
-    background-color: transparent;
-    opacity: 40%;
-    background-repeat: no-repeat;
     top: 425px;
   }
 
   .card__like-button_active {
     background-image: url(../images/likeheart2.svg);
-    opacity: 1;
-    background-repeat: no-repeat;
   }
 
   .card__like-button_active:hover {

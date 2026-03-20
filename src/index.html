@@ -99,6 +99,7 @@
                 minlength="2"
                 maxlength="40"
                 class="modal__input"
+                placeholder="Name"
                 required
               />
               <span class="modal__error" id="profile-name-input-error"></span>
@@ -112,6 +113,7 @@
                 minlength="2"
                 maxlength="400"
                 class="modal__input"
+                placeholder="Description"
                 required
               />
               <span
@@ -141,27 +143,29 @@
             <label class="modal__label">
               Image link
               <input
-                id="image-link_url"
+                id="imageLinkInput"
                 type="url"
                 class="modal__input"
                 name="link"
+                placeholder="Image link"
                 required
               />
-              <span id="image-link_url-error" class="modal__error"></span>
+              <span id="imageLinkInput-error" class="modal__error"></span>
             </label>
 
             <label class="modal__label">
               Caption
               <input
-                id="caption_input"
+                id="captionInput"
                 type="text"
                 minlength="2"
                 maxlength="30"
                 class="modal__input"
                 name="name"
+                placeholder="Caption"
                 required
               />
-              <span id="caption_input-error" class="modal__error"></span>
+              <span id="captionInput-error" class="modal__error"></span>
             </label>
 
             <button type="submit" class="modal__submit-btn">Save</button>
@@ -203,9 +207,10 @@
             avatar
             <input
               id="profile__avatar-input"
+              type="url"
               class="modal__input"
               name="avatar"
-              placeholder="avatar goes here"
+              placeholder="Avatar link"
               required
             />
             <span id="profile__avatar-input-error" class="modal__error"></span>

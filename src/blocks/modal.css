@@ -10,9 +10,31 @@
   align-items: center;
   justify-content: center;
   visibility: hidden;
-  transition: visibility 0.3s, opacity 0.3s ease-in;
+  transition:
+    visibility 0.3s,
+    opacity 0.3s ease-in;
   padding: 0 10px;
   opacity: 0;
+}
+
+.modal__title-delete {
+  width: 590px;
+  height: 24px;
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  
+}
+
+.modal__form_type_delete {
+  width: 332px;
+  height: 52px;
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .modal_type_preview {
@@ -71,6 +93,15 @@
   background-image: url(../images/xouticon.svg);
 }
 
+/* .modal__submit-btn-cancel {
+  
+} */
+
+.modal__submit-btn.modal__submit-btn-delete {
+  background-color: #ff3333;
+  color:#212121;
+}
+
 .modal__close-btn:hover {
   opacity: 100%;
   background-image: url(../images/xouticon.svg);
@@ -96,8 +127,6 @@
   color: rgba(33, 33, 33, 0.7);
 }
 
-
-
 .modal__input {
   padding: 16px 12px 16px;
   color: rgba(33, 33, 33, 0.4);
@@ -116,11 +145,9 @@
   opacity: 100%;
 }
 
-
 .modal__input_type_error {
   border: 1px solid #ff0000b2;
 }
-
 
 .modal__submit-btn {
   width: 156px;
@@ -133,8 +160,6 @@
   color: #fff;
   border-radius: 8px;
   cursor: pointer;
-
-  
 }
 
 .modal__submit-btn:disabled {
@@ -174,8 +199,6 @@
   top: calc(100% + 10px);
 }
 
-
-
 @media screen and (max-width: 680px) {
   .modal__container {
     padding: 12px;
@@ -209,7 +232,7 @@
 
 .modal__close-btn_type_preview {
   top: 0;
-  right:-52.5px;
+  right: -52.5px;
 }
 
 .modal__image {
